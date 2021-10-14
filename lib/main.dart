@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/firstscreen.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/loginscreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sign_in.dart';
 
 
 void main() {
@@ -42,7 +44,7 @@ class SplashScreenState extends State<SplashScreen>{
   }
 
   onDoneLoading() async {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginScreen(),));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ShopRegistration(),));
 
   }
 }
