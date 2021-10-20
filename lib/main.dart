@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/googlesigninprovider.dart';
+import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/startingscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';

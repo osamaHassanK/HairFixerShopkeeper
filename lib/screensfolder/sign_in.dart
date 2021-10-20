@@ -5,7 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
 import 'package:provider/provider.dart';
 
-import 'googlesigninprovider.dart';
+import '../auth/googlesigninprovider.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
