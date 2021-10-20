@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_catlog.dart';
 
 class ShopRegistrationForm extends StatefulWidget {
   const ShopRegistrationForm({Key? key}) : super(key: key);
@@ -150,7 +151,8 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10, left: 30, right: 30),
-                          child: TextFormField(
+                          child:
+                          TextFormField(
                               decoration: InputDecoration(
                             labelText: "Enter your shop address",
                             filled: true,
@@ -272,7 +274,8 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           child: SizedBox(
                             width: 120,
                             height: 48,
-                            child: ElevatedButton(
+                            child:
+                            ElevatedButton(
                               child: Text(' Done ',style: TextStyle(fontSize: 19),),
                               style: ElevatedButton.styleFrom(
                                 primary: Color(0xffD7A700),
@@ -289,7 +292,11 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                     actions: <Widget>[
                                       Center(
                                         child: ElevatedButton(
-                                            onPressed: (){}, child:Text("close")),
+                                            onPressed: (){
+                                              Navigator.of(context).pushReplacement(
+                                                  MaterialPageRoute(builder: (context)=>SkCatalog(),));
+
+                                            }, child:Text("close")),
                                       ),
                                     ],
                                   );
