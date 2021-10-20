@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context)  => ChangeNotifierProvider (
   create: (context) => GoogleSignInProvider(),
   child: MaterialApp(
+    debugShowCheckedModeBanner: false,
       home: StartingScreen(),
     ),
   );
