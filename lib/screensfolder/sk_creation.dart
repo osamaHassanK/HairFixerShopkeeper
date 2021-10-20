@@ -281,8 +281,19 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                     borderRadius: BorderRadius.all(Radius.circular(5))),
                               ),
                               onPressed: () {
-
-                                
+                                showDialog(context: context, builder: (context){
+                                  return AlertDialog(
+                                   title: Text("Congratulation",style: TextStyle(color: Color(0xffD7A700)),
+                                   textAlign: TextAlign.center,),
+                                    content: Text("Your Shop has been Registered successfully"),
+                                    actions: <Widget>[
+                                      Center(
+                                        child: ElevatedButton(
+                                            onPressed: (){}, child:Text("close")),
+                                      ),
+                                    ],
+                                  );
+                                });
                               },
                             ),
                           ),

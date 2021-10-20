@@ -37,9 +37,7 @@ class FirstScreen extends StatelessWidget {
                       Provider.of<GoogleSignInProvider>(context,listen:false);
                   provider.logout();
                 },)),
-
           ],
-
         )
       ),
     );
