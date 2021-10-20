@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "269054605723",
+    "project_id": "hair-fixer-shopkeeper",
+    "storage_bucket": "hair-fixer-shopkeeper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269054605723:android:5baf5ad19e2f12fb95493e",
+        "android_client_info": {
+          "package_name": "com.example.hairfixxer_shopkeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269054605723-eqn0cu4okmqh8gu79moda65hug1krti9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hairfixxer_shopkeeper",
+            "certificate_hash": "f08977659d0a23addcc286c58b2536b705e608c3"
+          }
+        },
+        {
+          "client_id": "269054605723-uuupntdvflai6ogo4q00eaqpthu67j7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJmvo-_dPhLKi0-aKumVNlRU8Jszh8IbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269054605723-uuupntdvflai6ogo4q00eaqpthu67j7j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

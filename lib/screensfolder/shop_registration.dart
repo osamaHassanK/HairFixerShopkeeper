@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_creation.dart';
 
 class ShopRegistration extends StatefulWidget {
   const ShopRegistration({Key? key}) : super(key: key);
@@ -85,7 +86,10 @@ class _ShopRegistrationState extends State<ShopRegistration> {
                 ),
               ),
               SizedBox(height:30),
-              Image.asset("assets/registerbutton.png",scale: 4,),
+              InkWell(
+                  onTap: (){
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ShopRegistrationForm(),));
+                  },child: Image.asset("assets/registerbutton.png",scale: 4,)),
               SizedBox(height: 70),
               Image.asset("assets/Hair Fixerr bottom.png",scale: 3.5,),
 
