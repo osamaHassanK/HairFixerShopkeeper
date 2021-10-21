@@ -7,6 +7,7 @@ import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_facial.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_hair.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 
 class ShopRegistrationForm extends StatefulWidget {
   const ShopRegistrationForm({Key? key}) : super(key: key);
@@ -297,7 +298,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                         child: ElevatedButton(
                                             onPressed: (){
                                               Navigator.of(context).pushReplacement(
-                                                  MaterialPageRoute(builder: (context)=>SkCatalog4(),));
+                                                  MaterialPageRoute(builder: (context)=> Notifications(),));
 
                                             }, child:Text("close")),
                                       ),

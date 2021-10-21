@@ -139,12 +139,8 @@ class SkCatalog3 extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
-
-
                       ],
                     )
-
-
                   ],
                 ),
               )
