@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SkCatalog extends StatelessWidget {
-  const SkCatalog({Key? key}) : super(key: key);
+class SkCatalog4 extends StatelessWidget {
+  const SkCatalog4 ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SkCatalog extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text("Create your Catalog",
                     style:TextStyle(fontSize: 25,color: Colors.white),
-                  textAlign: TextAlign.center,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -40,14 +40,14 @@ class SkCatalog extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
-                      children: [
-                        Text("Hair Cuts Catalog",style: TextStyle(
+                      children: const [
+                        Text("Facial and skin care Catalog",style: TextStyle(
                             color: Colors.black,fontSize: 23,fontWeight: FontWeight.bold
                         ),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Row(
@@ -56,7 +56,7 @@ class SkCatalog extends StatelessWidget {
                     TextFormField(
                         decoration: InputDecoration(
                           alignLabelWithHint: false,
-                          labelText: "e.g Circle Beared",
+                          labelText: "e.g Pedicure",
                           filled: true,
                           fillColor: Color(0xffF6F6F6),
                           contentPadding: const EdgeInsets.only(
@@ -66,11 +66,12 @@ class SkCatalog extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
-                      children: [ Text("Description",style: TextStyle(fontSize: 16,color: Colors.black),)],
+                      children: const [ Text("Description",
+                        style: TextStyle(fontSize: 16,color: Colors.black),)],
                     ),
                     TextFormField(
                         decoration: InputDecoration(
@@ -130,12 +131,8 @@ class SkCatalog extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
-
-
                       ],
                     )
-
-
                   ],
                 ),
               )
