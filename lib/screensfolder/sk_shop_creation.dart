@@ -40,14 +40,14 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           scale: 3.4,
                         )),
                     Positioned(
-                        top: 10,
-                        left: 5,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0,right: 8.0),
-                          child:
-                          Image.asset("assets/backarrow.png",scale: 4,),
+                      top: 10,
+                      left: 5,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                        child:
+                        Image.asset("assets/backarrow.png",scale: 4,),
+                      ),
                     ),
-                        ),
                     Positioned(
                       top: 10,
                       right: 5,
@@ -127,16 +127,16 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                               top: 10, left: 30, right: 30, bottom: 10),
                           child: TextFormField(
                               decoration: InputDecoration(
-                            labelText: "e.g Men’s Beauty Salon",
-                            filled: true,
-                            fillColor: Color(0xffF6F6F6),
-                            contentPadding: const EdgeInsets.only(
-                                left: 14.0, bottom: 6.0, top: 8.0),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
+                                labelText: "e.g Men’s Beauty Salon",
+                                filled: true,
+                                fillColor: Color(0xffF6F6F6),
+                                contentPadding: const EdgeInsets.only(
+                                    left: 14.0, bottom: 6.0, top: 8.0),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
                                     BorderSide(color: Colors.transparent),
-                                borderRadius: BorderRadius.circular(10)),
-                          )),
+                                    borderRadius: BorderRadius.circular(10)),
+                              )),
                         ),
                         Row(
                           children: const [
@@ -158,16 +158,16 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           child:
                           TextFormField(
                               decoration: InputDecoration(
-                            labelText: "Enter your shop address",
-                            filled: true,
-                            fillColor: Color(0xffF6F6F6),
-                            contentPadding: const EdgeInsets.only(
-                                left: 14.0, bottom: 6.0, top: 8.0),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          )),
+                                labelText: "Enter your shop address",
+                                filled: true,
+                                fillColor: Color(0xffF6F6F6),
+                                contentPadding: const EdgeInsets.only(
+                                    left: 14.0, bottom: 6.0, top: 8.0),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.transparent),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
@@ -197,9 +197,9 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                             ),
                             child: Center(
                                 child: Image.asset(
-                              "assets/uploadImage.png",
-                              scale: 3,
-                            )),
+                                  "assets/uploadImage.png",
+                                  scale: 3,
+                                )),
                           ),
                         ),
                         Padding(
@@ -231,18 +231,18 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                 height: 32,
                                 child: TextFormField(
                                     decoration: InputDecoration(
-                                  labelText: "10 AM",
-                                  filled: true,
-                                  fillColor: Color(0xffF6F6F6),
-                                  contentPadding: const EdgeInsets.only(
-                                      left: 14.0, bottom: 6.0, top: 8.0),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xffF6F6F6),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                )),
+                                      labelText: "10 AM",
+                                      filled: true,
+                                      fillColor: Color(0xffF6F6F6),
+                                      contentPadding: const EdgeInsets.only(
+                                          left: 14.0, bottom: 6.0, top: 8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0xffF6F6F6),
+                                        ),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                    )),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(right: 19, left: 19),
@@ -257,18 +257,18 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                 child: TextFormField(
                                     decoration: InputDecoration(
                                       alignLabelWithHint: false,
-                                  labelText: "11 PM",
-                                  filled: true,
-                                  fillColor: Color(0xffF6F6F6),
-                                  contentPadding: const EdgeInsets.only(
-                                      left: 14.0, bottom: 6.0, top: 8.0),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xffF6F6F6),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                )),
+                                      labelText: "11 PM",
+                                      filled: true,
+                                      fillColor: Color(0xffF6F6F6),
+                                      contentPadding: const EdgeInsets.only(
+                                          left: 14.0, bottom: 6.0, top: 8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0xffF6F6F6),
+                                        ),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                    )),
                               ),
                             ],
                           ),
@@ -290,8 +290,8 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                               onPressed: () {
                                 showDialog(context: context, builder: (context){
                                   return AlertDialog(
-                                   title: Text("Congratulation",style: TextStyle(color: Color(0xffD7A700)),
-                                   textAlign: TextAlign.center,),
+                                    title: Text("Congratulation",style: TextStyle(color: Color(0xffD7A700)),
+                                      textAlign: TextAlign.center,),
                                     content: Text("Your Shop has been Registered successfully"),
                                     actions: <Widget>[
                                       Center(

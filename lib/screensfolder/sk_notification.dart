@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 4,
         child: SafeArea(
@@ -32,9 +34,14 @@ class _NotificationsState extends State<Notifications> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: Image.asset(
-                            "assets/home.png",
-                            scale: 4,
+                          child: InkWell(
+                            onTap: (){ Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (context)=> SkHomeScreen(),));
+                            },
+                            child: Image.asset(
+                              "assets/home.png",
+                              scale: 4,
+                            ),
                           ),
                         ),
                       ],
@@ -59,6 +66,7 @@ class _NotificationsState extends State<Notifications> {
                 ),
                 backgroundColor: Colors.white,
                 bottom: TabBar(
+                  indicatorSize: TabBarIndicatorSize.label ,
                   unselectedLabelColor: Colors.greenAccent,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -72,7 +80,7 @@ class _NotificationsState extends State<Notifications> {
                             child: Text(
                               "All",
                               style: TextStyle(
-                                  color: Color(0xff4B4B4B), fontSize: 16),
+                                  color: Color(0xff4B4B4B), fontSize: 15),
                             ),
                           ),
                           decoration: BoxDecoration(
@@ -87,7 +95,7 @@ class _NotificationsState extends State<Notifications> {
                             child: Text(
                               "Read",
                               style: TextStyle(
-                                  color: Color(0xff4B4B4B), fontSize: 16),
+                                  color: Color(0xff4B4B4B), fontSize: 15),
                             ),
                           ),
                           decoration: BoxDecoration(
@@ -117,7 +125,7 @@ class _NotificationsState extends State<Notifications> {
                             child: Text(
                               "Clear All",
                               style: TextStyle(
-                                  color: Color(0xff4B4B4B), fontSize: 16),
+                                  color: Color(0xff4B4B4B), fontSize: 15),
                             ),
                           ),
                           decoration: BoxDecoration(

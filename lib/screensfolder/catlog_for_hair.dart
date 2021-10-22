@@ -29,7 +29,7 @@ class SkCatalog1 extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text("Create your Catalog",
                     style:TextStyle(fontSize: 25,color: Colors.white),
-                  textAlign: TextAlign.center,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
