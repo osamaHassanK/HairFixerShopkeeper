@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 class BottomNavigatorBar extends StatefulWidget {
 
   static final List<Widget>_widgetOptions=<Widget>[
     SkHomeScreen(),
-    Service(),
-    Service(),
-    Service(),
+    Services(),
+    Notifications(),
+    Services(),
   ];
 
   @override
