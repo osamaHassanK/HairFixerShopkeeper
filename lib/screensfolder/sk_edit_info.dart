@@ -1,29 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_facial.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_hair.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 
-class ShopRegistrationForm extends StatefulWidget {
-  const ShopRegistrationForm({Key? key}) : super(key: key);
+
+class SkEditInfo extends StatefulWidget {
+  const SkEditInfo({Key? key}) : super(key: key);
 
   @override
-  State<ShopRegistrationForm> createState() => _ShopRegistrationFormState();
+  _SkEditInfoState createState() => _SkEditInfoState();
 }
 
-var height = "MediaQuery.of(context).size.height";
-var width = "MediaQuery.of(context).size.height";
-
-class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
+class _SkEditInfoState extends State<SkEditInfo> {
   @override
   Widget build(BuildContext context) {
-    return
-      SafeArea(
+    return    SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -321,5 +310,6 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
         ),
       ),
     );
+
   }
 }

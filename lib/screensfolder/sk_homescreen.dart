@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_info.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_shop_creation.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -167,7 +169,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   width: double.infinity,
-                  height: 180,
+                  height: 170,
                   decoration: BoxDecoration(
                     color: Color(0xffFBFBFB),
                     borderRadius: BorderRadius.circular(12),
@@ -190,7 +192,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                             Text(
                               "Shop Details",
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.black),
                             ),
@@ -206,7 +208,10 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(5))),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context)=> SkEditInfo(),
+                                    ));},
                             ),
                           ],
                         ),
@@ -255,7 +260,123 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 550,
+                width: MediaQuery.of(context).size.width*0.980,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  padding:
+                  EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: InkWell(
+                            onTap: () {
+//Navigator.pushNamed(context, '/message');
+                            },
+                            child:Container(
+                              width: MediaQuery.of(context).size.width*0.920,
+                              height: 150,decoration: BoxDecoration(
+                                color: Color(0xffFBFBFB),
+                                borderRadius: BorderRadius.circular(12),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    offset: Offset(0.0,0.0), //(x,y)
+                                    blurRadius: 6.0,
+                                  ),
+                                ]
+                            ),
+                              child:Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 8,left:8 ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "Upcomming Apointments",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.black),
+                                        ),
+                                        ElevatedButton(
+                                          child: Text(
+                                            '  Manage  \nApointment',
+                                            style: TextStyle(fontSize: 11),
+                                          ),
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Color(0xffD7A700),
+                                            onPrimary: Colors.white,
+                                            shape: const BeveledRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.all(Radius.circular(5))),
+                                          ),
+                                          onPressed: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8,right: 8,bottom: 8),
+                                    child: Row(
+                                      children: [
+                                        Text("Customer Name:",style: TextStyle(fontSize: 10)),
+                                        SizedBox(width: 13,),
+                                        Text("Rehan Qazmi",style: TextStyle(fontSize: 10))
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 8.0,left: 8,bottom: 8),
+                                    child: Row(
+                                      children: [
+                                        Text("Apointment Date:",style: TextStyle(fontSize: 10),),
+                                        SizedBox(width: 12,),
+                                        Text("02 september, 2021",
+                                            style: TextStyle(fontSize: 10)),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 8.0,left: 8,bottom: 8),
+                                    child: Row(
+                                      children: [
+                                        Text("Apointment Time:",style: TextStyle(fontSize: 10),),
+                                        SizedBox(width: 5,),
+                                        Text("11:30AM to 12:30Am",
+                                            style: TextStyle(fontSize: 10)),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8,right: 8,),
+                                    child: Row(
+                                      children: [
+                                        Text("Services:",style: TextStyle(fontSize: 10)),
+                                        SizedBox(width: 45,),
+                                        Text("Hair Cut(800RS)",style: TextStyle(fontSize: 10))
+                                      ],
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+
             ],
           ),
         ),

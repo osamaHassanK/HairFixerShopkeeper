@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 
+import 'bottomnavigatorbar.dart';
+
 class Notifications extends StatefulWidget {
   const Notifications({Key? key}) : super(key: key);
 
@@ -36,7 +38,7 @@ class _NotificationsState extends State<Notifications> {
                           padding: const EdgeInsets.only(right: 8.0),
                           child: InkWell(
                             onTap: (){ Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context)=> SkHomeScreen(),));
+                                MaterialPageRoute(builder: (context)=>  BottomNavigatorBar (),));
                             },
                             child: Image.asset(
                               "assets/home.png",
