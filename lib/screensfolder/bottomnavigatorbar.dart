@@ -1,10 +1,16 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
 class BottomNavigatorBar extends StatefulWidget {
 
-  static List<Widget>_widgetOptions=<Widget>[
+  static final List<Widget>_widgetOptions=<Widget>[
     SkHomeScreen(),
+    Service(),
+    Service(),
+    Service(),
   ];
 
   @override
@@ -28,11 +34,6 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
               BottomNavyBarItem(
                 icon: Icon(Icons.home_outlined,size: 28,),
                 title: Text('Home'),
-                activeColor: Color(0xffCF9B00),
-              ),
-              BottomNavyBarItem(
-                  icon: Icon(Icons.my_library_books,size: 28,),
-                  title: Text('Catalog'),
                 activeColor: Color(0xffCF9B00),
               ),
               BottomNavyBarItem(
