@@ -167,6 +167,7 @@ class _ServicesState extends State<Services> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Stack(
                   children:[
@@ -186,24 +187,293 @@ class _ServicesState extends State<Services> {
                             ),
                           ],
                         ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
                        ),
                       ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8,),
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
                       child: Container(
-                        width: 150,
-                        height: 70,
+                        width: 154,
+                        height: 72.0,
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent,
-                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Image.asset(gridImages[0]),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
                       ),
                     )
                   ],
-                )
+                ),
+                Stack(
+                  children:[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 7,
+                              offset: Offset(0,02), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                      child: Container(
+                        width: 154,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
               ],
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Stack(
+                  children:[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 7,
+                              offset: Offset(0,02), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                      child: Container(
+                        width: 154,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Stack(
+                  children:[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 7,
+                              offset: Offset(0,02), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                      child: Container(
+                        width: 154,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Stack(
+                  children:[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 7,
+                              offset: Offset(0,02), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                      child: Container(
+                        width: 154,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Stack(
+                  children:[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 7,
+                              offset: Offset(0,02), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: const Text("Hair Cut",textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                      child: Container(
+                        width: 154,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(gridImages[0],
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+
+              ],
+            ),
+
+
 
           ],
         ),
