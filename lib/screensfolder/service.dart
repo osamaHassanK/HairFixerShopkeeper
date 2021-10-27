@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sign_in.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_catalog.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 
@@ -78,7 +79,7 @@ class _ServicesState extends State<Services> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.pop(context, '/homePage');
+                          Navigator.pop(context,true);
                         },
                         child: Image.asset(
                           "assets/notification.png",
@@ -102,13 +103,11 @@ class _ServicesState extends State<Services> {
                 ],
               ),
             ),
-
-
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 45,
+              height: 40,
               decoration: BoxDecoration(color: Colors.white),
-              child: Center(
+              child: const Center(
                   child: Text(
                     "Men's Beauty Saloon",
                     style: TextStyle(
@@ -117,13 +116,11 @@ class _ServicesState extends State<Services> {
                         fontWeight: FontWeight.bold),
                   )),
             ),
-
-
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 50,
+              height: 45,
               decoration: BoxDecoration(color: Color(0xffD5A300)),
-              child: Center(
+              child: const Center(
                   child: Text(
                 "Services",
                 style: TextStyle(
@@ -133,35 +130,29 @@ class _ServicesState extends State<Services> {
               )),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 20.0,top: 8,bottom: 8),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:[
-                  Container(
-                    height: 32,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Color(0xffD5A300),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("Deals and Discounts",style: TextStyle(
-                        color: Colors.white,fontSize: 13),textAlign: TextAlign.center,),
-                    ),
-                  ),
-                  Container(
-                    height: 32,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0xffD5A300),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("Edit Service",style: TextStyle(
+                children: [
+                  InkWell(
+                    child: Container(
+                      height: 32,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Color(0xffD5A300),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Create new deals",style: TextStyle(
                           color: Colors.white,fontSize: 13),textAlign: TextAlign.center,),
+                      ),
                     ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => EditCatalog()),
+                        );
+                      }
                   ),
                 ],
               ),
@@ -169,100 +160,117 @@ class _ServicesState extends State<Services> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.black,fontSize: 13),
+                            child: Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: const Text("Hair Cut",textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
+                            ),
+                           ),
+                          ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[0],
+                                fit: BoxFit.fitWidth,
+                              ),
                             ),
                           ),
-                        ),
-                       ),
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black,fontSize: 13),
-                            ),
-                          ),
-                        ),
-                      ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("30\$"),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: const Text("Shave",textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    )
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[1],
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("50\$"),
+                    ),
+
                   ],
                 ),
 
@@ -271,100 +279,116 @@ class _ServicesState extends State<Services> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            child: Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: const Text("Facial",textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[2],
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    )
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("30\$"),
+                    ),
                   ],
                 ),
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            child: Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: const Text("Hair Color",textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[3],
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    )
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("30\$"),
+                    ),
                   ],
                 ),
 
@@ -373,108 +397,122 @@ class _ServicesState extends State<Services> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            child: Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: const Text("Massage",textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[4],
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    )
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("30\$"),
+                    ),
                   ],
                 ),
-                Stack(
-                  children:[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 7,
-                              offset: Offset(0,02), // changes position of shadow
+                Column(
+                  children: [
+                    Stack(
+                      children:[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0,02), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Align(
-                          alignment: FractionalOffset.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: const Text("Hair Cut",textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black,fontSize: 13),
+                            child: const Align(
+                              alignment: FractionalOffset.bottomCenter,
+                              child: Padding(
+                                padding: EdgeInsets.only(bottom: 8.0),
+                                child: Text("Pedicure",textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.black,fontSize: 13),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0,top: 8,),
+                          child: Container(
+                            width: 154,
+                            height: 72.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(gridImages[7],
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                      child: Container(
-                        width: 154,
-                        height: 72.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(gridImages[0],
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    )
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("30\$"),
+                    ),
+
                   ],
                 ),
 
               ],
             ),
-
-
-
           ],
         ),
       ),

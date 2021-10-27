@@ -4,6 +4,8 @@ import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_info.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_shop_creation.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
+import 'bottomnavigatorbar.dart';
+
 class SkHomeScreen extends StatefulWidget {
   const SkHomeScreen({Key? key}) : super(key: key);
 
@@ -54,16 +56,16 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 ),
               ),
               Container(
-                height: 50,
+                height: 40,
                 width: double.infinity,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: const EdgeInsets.only(top: 6.0),
                   child: Text(
                     "Men's Beauty Saloon",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xff4D4D4D),
-                      fontSize: 25,
+                      fontSize: 23,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -262,7 +264,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 550,
+                height: 200,
                 width: MediaQuery.of(context).size.width*0.980,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -365,7 +367,6 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                       ],
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
@@ -376,7 +377,6 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                   },
                 ),
               ),
-
             ],
           ),
         ),
