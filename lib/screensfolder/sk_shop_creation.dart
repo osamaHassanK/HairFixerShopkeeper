@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -8,6 +10,7 @@ import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_hair.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ShopRegistrationForm extends StatefulWidget {
   const ShopRegistrationForm({Key? key}) : super(key: key);
@@ -20,6 +23,9 @@ var height = "MediaQuery.of(context).size.height";
 var width = "MediaQuery.of(context).size.height";
 
 class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
+  final ImagePicker _picker= ImagePicker();
+  XFile? image;
+
   @override
   Widget build(BuildContext context) {
     return
@@ -117,7 +123,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                             Text(
                               "1. Enter your Shop Name",
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 15,
                                 color: Colors.black,
                               ),
                             ),
@@ -147,7 +153,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                             Text(
                               "2. Enter your Shop Address",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 15,
                                 color: Colors.black, //(0xff474747),
                               ),
                             ),
@@ -180,7 +186,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                               Text(
                                 "3. Upload your Image",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.black, //(0xff474747),
                                 ),
                               ),
@@ -188,21 +194,47 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.850,
-                            height: MediaQuery.of(context).size.height * 0.200,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xffF6F6F6),
-                            ),
-                            child: Center(
-                                child: Image.asset(
-                                  "assets/uploadImage.png",
-                                  scale: 3,
-                                )),
+                          padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
+                          child:  Container(
+                              width: double.infinity,
+                              height: 200,
+                              color: Colors.transparent,
+                              child:Stack(
+                                children: [
+                                  InkWell(
+                                    onTap: (){
+                                      filePicker();
+                                    },
+                                    child: Center(
+                                      child:
+                                      Image.asset("assets/uploadImage.png",scale: 4,),
+                                    ),
+                                  ),image == null ?Center(child:Text("No image Found"),):Image.file(File(image!.path),
+                                    width: double.infinity,
+                                    fit: BoxFit.fitHeight,
+                                  )
+                                ],
+                              )
                           ),
+
                         ),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Container(
+                        //     width: MediaQuery.of(context).size.width * 0.850,
+                        //     height: MediaQuery.of(context).size.height * 0.200,
+                        //     decoration: BoxDecoration(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //       color: Color(0xffF6F6F6),
+                        //     ),
+                        //     child: Center(
+                        //         child: Image.asset(
+                        //           "assets/uploadImage.png",
+                        //           scale: 3,
+                        //         )),
+                        //   ),
+                        // ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Row(
@@ -299,7 +331,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                         child: ElevatedButton(
                                             onPressed: (){
                                               Navigator.of(context).pushReplacement(
-                                                  MaterialPageRoute(builder: (context)=> Notifications(),));
+                                                  MaterialPageRoute(builder: (context)=> Catalog1(),));
 
                                             }, child:Text("close")),
                                       ),
@@ -321,5 +353,12 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
         ),
       ),
     );
+  }
+  void filePicker()async{
+    final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
+    print(selectimage!.path);
+    setState(() {
+      image=selectimage;
+    });
   }
 }

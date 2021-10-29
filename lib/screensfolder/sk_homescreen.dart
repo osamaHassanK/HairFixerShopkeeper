@@ -56,10 +56,10 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 ),
               ),
               Container(
-                height: 40,
+                height: 30,
                 width: double.infinity,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 6.0),
+                  padding: const EdgeInsets.only(top: 2.0),
                   child: Text(
                     "Men's Beauty Saloon",
                     textAlign: TextAlign.center,
@@ -83,7 +83,8 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                     children: [
                       Container(
                         color: Colors.transparent,
-                        height: 180,
+                        height: 170,
+                        width: double.infinity,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -168,10 +169,10 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(left: 24.0,right: 15.0,top: 5),
                 child: Container(
                   width: double.infinity,
-                  height: 170,
+                  height: 160,
                   decoration: BoxDecoration(
                     color: Color(0xffFBFBFB),
                     borderRadius: BorderRadius.circular(12),

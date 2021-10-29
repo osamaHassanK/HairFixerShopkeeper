@@ -18,6 +18,7 @@ class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _widgetOptions = <Widget>[
+
       SkHomeScreen(),
       Notifications(),
       LoginScreen(),
@@ -28,6 +29,7 @@ class _ServicesState extends State<Services> {
       LoginScreen(),
       Services(),
       ShopRegistration(),
+
     ];
 
     final gridImages = [

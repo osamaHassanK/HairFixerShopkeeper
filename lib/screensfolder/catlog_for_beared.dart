@@ -2,17 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-class CatalogBeard extends StatefulWidget {
-  const CatalogBeard({Key? key}) : super(key: key);
+class Catalog2 extends StatefulWidget {
+  const Catalog2({Key? key}) : super(key: key);
 
   @override
-  _CatalogBeardState createState() => _CatalogBeardState();
+  _Catalog2State createState() => _Catalog2State();
 }
 
-class _CatalogBeardState extends State<CatalogBeard> {
+class _Catalog2State extends State<Catalog2> {
 
   final ImagePicker _picker= ImagePicker();
-  XFile? image;
+  XFile? image3;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class _CatalogBeardState extends State<CatalogBeard> {
                       child:
                       Image.asset("assets/uploadImage.png",scale: 4,),
                     ),
-                  ),image == null ?Text("No image Found"):Image.file(File("selectimage!.path"),
+                  ),image3 == null ?Text("No image Found"):Image.file(File("selectimage!.path"),
                     width: double.infinity,
                     fit: BoxFit.fitHeight,
                   )
@@ -131,7 +131,10 @@ class _CatalogBeardState extends State<CatalogBeard> {
 
         ),
       ),
-                Row(
+              Padding(
+                padding: EdgeInsets.only(left: 20.0, right: 20, top: 8),
+
+                child:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton(
@@ -158,6 +161,8 @@ class _CatalogBeardState extends State<CatalogBeard> {
 
                   ],
                 ),
+
+              )
       ],
     ),
     ),
@@ -168,7 +173,7 @@ class _CatalogBeardState extends State<CatalogBeard> {
     final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
     print(selectimage!.path);
     setState(() {
-      image=selectimage;
+      image3=selectimage;
     });
   }
 }

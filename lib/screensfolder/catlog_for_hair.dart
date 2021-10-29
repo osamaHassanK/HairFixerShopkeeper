@@ -1,6 +1,7 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Catalog1 extends StatefulWidget {
@@ -13,7 +14,7 @@ class Catalog1 extends StatefulWidget {
 class _Catalog1State extends State<Catalog1> {
 
   final ImagePicker _picker= ImagePicker();
-  XFile? image;
+  XFile? image2;
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -119,7 +120,7 @@ class _Catalog1State extends State<Catalog1> {
                                   child:
                                   Image.asset("assets/uploadImage.png",scale: 4,),
                                 ),
-                              ),image == null ?Text("No image Found"):Image.file(File("selectimage!.path"),
+                              ),image2 == null ?Text("No image Found"):Image.file(File("selectingimage!.path"),
                                 width: double.infinity,
                                 fit: BoxFit.fitHeight,
                               )
@@ -148,6 +149,7 @@ class _Catalog1State extends State<Catalog1> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ElevatedButton(
+
                           child: Text('+ Add ',style: TextStyle(fontSize: 18),),
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xffD7A700),
@@ -155,7 +157,12 @@ class _Catalog1State extends State<Catalog1> {
                             shape: const BeveledRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(5))),
                           ),
-                          onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Catalog2()),
+                              );
+                            },
                         ),
                         ElevatedButton(
                           child: Text(' Done ',style: TextStyle(fontSize: 18),),
@@ -179,10 +186,11 @@ class _Catalog1State extends State<Catalog1> {
     );
   }
   void filePicker()async{
-    final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
-    print(selectimage!.path);
+    final XFile? selectingimage = await _picker.pickImage(source:ImageSource.gallery);
+    print(selectingimage!.path);
     setState(() {
-      image=selectimage;
+      image2=selectingimage;
     });
   }
+
 }
