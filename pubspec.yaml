@@ -40,7 +40,8 @@ dependencies:
   smooth_star_rating: 1.1.1
   bottom_navy_bar: ^6.0.0
   carousel_slider: ^4.0.0
-  image_picker: ^0.8.2
+  image_picker_gallery_camera: ^0.2.2
+
 
 dev_dependencies:
   flutter_test:

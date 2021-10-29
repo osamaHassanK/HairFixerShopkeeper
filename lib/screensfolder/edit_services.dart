@@ -14,8 +14,6 @@ class EditService extends StatefulWidget {
 
 class _EditServiceState extends State<EditService> {
 
-  final ImagePicker _picker= ImagePicker();
-  XFile? image;
 
   @override
   Widget build(BuildContext context) {
@@ -211,31 +209,31 @@ class _EditServiceState extends State<EditService> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
-                  child:  Container(
-                      width: double.infinity,
-                      height: 200,
-                      color: Colors.transparent,
-                      child:Stack(
-                        children: [
-                          InkWell(
-                            onTap: (){
-                              filePicker();
-                            },
-                            child: Center(
-                              child:
-                              Image.asset("assets/uploadImage.png",scale: 4,),
-                            ),
-                          ),image == null ?Text("No image Found"):Image.file(File(image!.path),
-                            width: double.infinity,
-                            fit: BoxFit.fitHeight,
-                          )
-                        ],
-                      )
-                  ),
-
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
+                //   child:  Container(
+                //       width: double.infinity,
+                //       height: 200,
+                //       color: Colors.transparent,
+                //       child:Stack(
+                //         children: [
+                //           InkWell(
+                //             onTap: (){
+                //               filePicker();
+                //             },
+                //             child: Center(
+                //               child:
+                //               Image.asset("assets/uploadImage.png",scale: 4,),
+                //             ),
+                //           ),image == null ?Text("No image Found"):Image.file(File(image!.path),
+                //             width: double.infinity,
+                //             fit: BoxFit.fitHeight,
+                //           )
+                //         ],
+                //       )
+                //   ),
+                //
+                // ),
 
 
               ],
@@ -245,11 +243,11 @@ class _EditServiceState extends State<EditService> {
       ),
     );
   }
-  void filePicker()async{
-    final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
-    print(selectimage!.path);
-    setState(() {
-      image=selectimage;
-    });
-  }
+  // void filePicker()async{
+  //   final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
+  //   print(selectimage!.path);
+  //   setState(() {
+  //     image=selectimage;
+  //   });
+  // }
 }

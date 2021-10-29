@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 class Catalog1 extends StatefulWidget {
   const Catalog1({Key? key}) : super(key: key);
@@ -12,9 +13,8 @@ class Catalog1 extends StatefulWidget {
 }
 
 class _Catalog1State extends State<Catalog1> {
+  var _image;
 
-  final ImagePicker _picker= ImagePicker();
-  XFile? image2;
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -104,47 +104,37 @@ class _Catalog1State extends State<Catalog1> {
                     Row(
                       children: [ Text("Image",style: TextStyle(fontSize: 16,color: Colors.black),)],
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
-                      child:  Container(
+                    Padding(padding: EdgeInsets.all(12),
+                      child:Container(
+                          color: Colors.transparent,
                           width: double.infinity,
                           height: 200,
-                          color: Colors.transparent,
                           child:Stack(
                             children: [
-                              InkWell(
-                                onTap: (){
-                                  filePicker();
-                                },
-                                child: Center(
-                                  child:
-                                  Image.asset("assets/uploadImage.png",scale: 4,),
+                              Center(
+                                child:  ElevatedButton(
+                                  onPressed: () => getImage(ImgSource.Gallery),
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.white,elevation: 0
+
+                                  ),
+                                  child: Text(
+                                    "Upload Image".toUpperCase(),
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                              ),image2 == null ?Text("No image Found"):Image.file(File("selectingimage!.path"),
-                                width: double.infinity,
-                                fit: BoxFit.fitHeight,
-                              )
+                              ),
+                              Center(
+                                child:
+                                _image != null ? Image.file(File(_image.path),) : Container(),
+                              ),
+
+
                             ],
                           )
-                      ),
 
+                      ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(8.0),
-                    //   child: Container(
-                    //     width: MediaQuery.of(context).size.width * 0.920,
-                    //     height: MediaQuery.of(context).size.height * 0.330,
-                    //     decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(10),
-                    //       color: Color(0xffF6F6F6),
-                    //     ),
-                    //     child: Center(
-                    //         child: Image.asset(
-                    //           "assets/uploadImage.png",
-                    //           scale: 3,
-                    //         )),
-                    //   ),
-                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -185,12 +175,31 @@ class _Catalog1State extends State<Catalog1> {
       ),
     );
   }
-  void filePicker()async{
-    final XFile? selectingimage = await _picker.pickImage(source:ImageSource.gallery);
-    print(selectingimage!.path);
+  Future getImage(ImgSource source) async {
+    var image = await ImagePickerGC.pickImage(
+        enableCloseButton: true,
+        closeIcon: Icon(
+          Icons.close,
+          color: Colors.red,
+          size: 12,
+        ),
+        context: context,
+        source: source,
+        barrierDismissible: true,
+        cameraIcon: Icon(
+          Icons.camera_alt,
+          color: Colors.red,
+        ), //cameraIcon and galleryIcon can change. If no icon provided default icon will be present
+        cameraText: Text(
+          "From Camera",
+          style: TextStyle(color: Colors.red),
+        ),
+        galleryText: Text(
+          "From Gallery",
+          style: TextStyle(color: Colors.blue),
+        ));
     setState(() {
-      image2=selectingimage;
+      _image = image;
     });
   }
-
 }

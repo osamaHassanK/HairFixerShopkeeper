@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SkCatalog4 extends StatelessWidget {
   const SkCatalog4 ({Key? key}) : super(key: key);
-
+  var _image;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
