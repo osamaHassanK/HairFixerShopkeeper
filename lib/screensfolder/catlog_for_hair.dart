@@ -1,12 +1,22 @@
-import 'package:flutter/material.dart';
 
-class SkCatalog1 extends StatelessWidget {
-  const SkCatalog1({Key? key}) : super(key: key);
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class Catalog1 extends StatefulWidget {
+  const Catalog1({Key? key}) : super(key: key);
 
   @override
+  _Catalog1State createState() => _Catalog1State();
+}
+
+class _Catalog1State extends State<Catalog1> {
+
+  final ImagePicker _picker= ImagePicker();
+  XFile? image;
+  @override
   Widget build(BuildContext context) {
-    return
-      SafeArea(
+    return  SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body:SingleChildScrollView(
@@ -94,21 +104,46 @@ class SkCatalog1 extends StatelessWidget {
                       children: [ Text("Image",style: TextStyle(fontSize: 16,color: Colors.black),)],
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.920,
-                        height: MediaQuery.of(context).size.height * 0.330,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffF6F6F6),
-                        ),
-                        child: Center(
-                            child: Image.asset(
-                              "assets/uploadImage.png",
-                              scale: 3,
-                            )),
+                      padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
+                      child:  Container(
+                          width: double.infinity,
+                          height: 200,
+                          color: Colors.transparent,
+                          child:Stack(
+                            children: [
+                              InkWell(
+                                onTap: (){
+                                  filePicker();
+                                },
+                                child: Center(
+                                  child:
+                                  Image.asset("assets/uploadImage.png",scale: 4,),
+                                ),
+                              ),image == null ?Text("No image Found"):Image.file(File("selectimage!.path"),
+                                width: double.infinity,
+                                fit: BoxFit.fitHeight,
+                              )
+                            ],
+                          )
                       ),
+
                     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(8.0),
+                    //   child: Container(
+                    //     width: MediaQuery.of(context).size.width * 0.920,
+                    //     height: MediaQuery.of(context).size.height * 0.330,
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       color: Color(0xffF6F6F6),
+                    //     ),
+                    //     child: Center(
+                    //         child: Image.asset(
+                    //           "assets/uploadImage.png",
+                    //           scale: 3,
+                    //         )),
+                    //   ),
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -132,12 +167,8 @@ class SkCatalog1 extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
-
-
                       ],
                     )
-
-
                   ],
                 ),
               )
@@ -146,5 +177,12 @@ class SkCatalog1 extends StatelessWidget {
         ),
       ),
     );
+  }
+  void filePicker()async{
+    final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
+    print(selectimage!.path);
+    setState(() {
+      image=selectimage;
+    });
   }
 }

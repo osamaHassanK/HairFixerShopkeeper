@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
-
 import 'bottomnavigatorbar.dart';
+
 
 class EditCatalog extends StatefulWidget {
   const EditCatalog({Key? key}) : super(key: key);
@@ -121,7 +121,8 @@ class _EditCatalogState extends State<EditCatalog> {
                                                   FontWeight
                                                       .w800),
                                             ),),
-                                      ),Column(
+                                      ),
+                                      Column(
                                         children: [
                                           Row(
                                             children: const [
