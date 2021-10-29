@@ -1,7 +1,15 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class SkCatalog4 extends StatelessWidget {
-  const SkCatalog4 ({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
+class SkCatalog4 extends StatefulWidget {
+  const SkCatalog4({Key? key}) : super(key: key);
+
+  @override
+  _SkCatalog4State createState() => _SkCatalog4State();
+}
+
+class _SkCatalog4State extends State<SkCatalog4> {
   var _image;
   @override
   Widget build(BuildContext context) {
@@ -93,21 +101,36 @@ class SkCatalog4 extends StatelessWidget {
                       children: [ Text("Image",style: TextStyle(fontSize: 16,color: Colors.black),)],
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.920,
-                        height: MediaQuery.of(context).size.height * 0.330,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffF6F6F6),
-                        ),
-                        child: Center(
-                            child: Image.asset(
-                              "assets/uploadImage.png",
-                              scale: 3,
-                            )),
+                      padding: EdgeInsets.all(12),
+                      child:Container(
+                          color: Colors.transparent,
+                          width: double.infinity,
+                          height: 200,
+                          child:Stack(
+                            children: [
+                              Center(
+                                child:  ElevatedButton(
+                                  onPressed: () => getImage(ImgSource.Gallery),
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,elevation: 0
+
+                                  ),
+                                  child: Text(
+                                    "Upload Image".toUpperCase(),
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child:
+                                _image != null ? Image.file(File(_image.path),) : Container(),
+                              ),
+                            ],
+                          )
+
                       ),
                     ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -141,5 +164,32 @@ class SkCatalog4 extends StatelessWidget {
         ),
       ),
     );
+  }
+  Future getImage(ImgSource source) async {
+    var image = await ImagePickerGC.pickImage(
+        enableCloseButton: true,
+        closeIcon: Icon(
+          Icons.close,
+          color: Colors.red,
+          size: 12,
+        ),
+        context: context,
+        source: source,
+        barrierDismissible: true,
+        cameraIcon: Icon(
+          Icons.camera_alt,
+          color: Colors.red,
+        ), //cameraIcon and galleryIcon can change. If no icon provided default icon will be present
+        cameraText: Text(
+          "From Camera",
+          style: TextStyle(color: Colors.red),
+        ),
+        galleryText: Text(
+          "From Gallery",
+          style: TextStyle(color: Colors.blue),
+        ));
+    setState(() {
+      _image = image;
+    });
   }
 }

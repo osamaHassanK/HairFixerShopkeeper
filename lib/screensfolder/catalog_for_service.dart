@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_facial.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 class Catalog3 extends StatefulWidget {
   const Catalog3({Key? key}) : super(key: key);
@@ -150,7 +151,12 @@ class _Catalog3State extends State<Catalog3> {
                             shape: const BeveledRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(5))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SkCatalog4()),
+                            );
+                          },
                         ),
                         ElevatedButton(
                           child: Text(' Done ',style: TextStyle(fontSize: 18),),
