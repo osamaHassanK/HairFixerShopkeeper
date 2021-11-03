@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 import 'bottomnavigatorbar.dart';
 
 class EditService extends StatefulWidget {
@@ -14,7 +14,7 @@ class EditService extends StatefulWidget {
 
 class _EditServiceState extends State<EditService> {
 
-
+  var _image;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -209,32 +209,37 @@ class _EditServiceState extends State<EditService> {
                     ],
                   ),
                 ),
-                // Padding(
-                //   padding: EdgeInsets.only(left: 30.0, right: 30, top: 8),
-                //   child:  Container(
-                //       width: double.infinity,
-                //       height: 200,
-                //       color: Colors.transparent,
-                //       child:Stack(
-                //         children: [
-                //           InkWell(
-                //             onTap: (){
-                //               filePicker();
-                //             },
-                //             child: Center(
-                //               child:
-                //               Image.asset("assets/uploadImage.png",scale: 4,),
-                //             ),
-                //           ),image == null ?Text("No image Found"):Image.file(File(image!.path),
-                //             width: double.infinity,
-                //             fit: BoxFit.fitHeight,
-                //           )
-                //         ],
-                //       )
-                //   ),
-                //
-                // ),
+                Padding(padding: EdgeInsets.all(12),
+                  child:Container(
+                      color: Colors.transparent,
+                      width: double.infinity,
+                      height: 200,
+                      child:Stack(
+                        children: [
+                          Center(
+                            child:  ElevatedButton(
+                              onPressed: () => getImage(ImgSource.Gallery),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,elevation: 0
 
+                              ),
+                              child: Text(
+                                "Upload Image".toUpperCase(),
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child:
+                            _image != null ? Image.file(File(_image.path),) : Container(),
+                          ),
+
+
+                        ],
+                      )
+
+                  ),
+                ),
 
               ],
             ),
@@ -243,11 +248,31 @@ class _EditServiceState extends State<EditService> {
       ),
     );
   }
-  // void filePicker()async{
-  //   final XFile? selectimage = await _picker.pickImage(source:ImageSource.gallery);
-  //   print(selectimage!.path);
-  //   setState(() {
-  //     image=selectimage;
-  //   });
-  // }
+  Future getImage(ImgSource source) async {
+    var image = await ImagePickerGC.pickImage(
+        enableCloseButton: true,
+        closeIcon: Icon(
+          Icons.close,
+          color: Colors.red,
+          size: 12,
+        ),
+        context: context,
+        source: source,
+        barrierDismissible: true,
+        cameraIcon: Icon(
+          Icons.camera_alt,
+          color: Colors.red,
+        ), //cameraIcon and galleryIcon can change. If no icon provided default icon will be present
+        cameraText: Text(
+          "From Camera",
+          style: TextStyle(color: Colors.red),
+        ),
+        galleryText: Text(
+          "From Gallery",
+          style: TextStyle(color: Colors.blue),
+        ));
+    setState(() {
+      _image = image;
+    });
+  }
 }

@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                           fit: BoxFit.cover,
                         )),
                     Positioned(
-                        top: 42,
+                        top: 45,
                         left: 20,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -356,7 +356,7 @@ class LoginScreen extends StatelessWidget {
                   ]),
                 ]),
                 Positioned(
-                  top: 15,
+                  top: 25,
                   left: 90,
                   child: Container(
                     decoration: BoxDecoration(
@@ -364,7 +364,7 @@ class LoginScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30)),
                     child: Image.asset(
                       "assets/logo 1.png",
-                      scale: 4,
+                      scale: 3,
                     ),
                     width: MediaQuery.of(context).size.width * 0.5,
                     height: MediaQuery.of(context).size.height * 0.170,

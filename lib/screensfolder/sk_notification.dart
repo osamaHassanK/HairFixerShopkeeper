@@ -31,7 +31,7 @@ class _NotificationsState extends State<Notifications> {
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Image.asset(
                             "assets/backarrow.png",
-                            scale: 4,
+                            scale:4,
                           ),
                         ),
                         Padding(
