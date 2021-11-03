@@ -1,16 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_facial.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
-class Catalog3 extends StatefulWidget {
-  const Catalog3({Key? key}) : super(key: key);
+
+import 'sk_notification.dart';
+
+
+class CatalogService extends StatefulWidget {
+  const CatalogService({Key? key}) : super(key: key);
 
   @override
-  _Catalog3State createState() => _Catalog3State();
+  _CatalogServiceState createState() => _CatalogServiceState();
 }
 
-class _Catalog3State extends State<Catalog3> {
+class _CatalogServiceState extends State<CatalogService> {
   var _image;
   @override
   Widget build(BuildContext context) {
@@ -154,7 +157,7 @@ class _Catalog3State extends State<Catalog3> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => SkCatalog4()),
+                              MaterialPageRoute(builder: (context) => const Notifications()),
                             );
                           },
                         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_sign_up.dart';
 import 'package:provider/provider.dart';
 
 import '../auth/googlesigninprovider.dart';
@@ -337,7 +338,7 @@ class LoginScreen extends StatelessWidget {
                                       Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  ShopRegistration()));
+                                                  SignUpScreen()));
                                     },
                                     child: Text(
                                       " Register",

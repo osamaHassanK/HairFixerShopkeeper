@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
+
+import 'catalog_for_facial.dart';
 class Catalog2 extends StatefulWidget {
   const Catalog2({Key? key}) : super(key: key);
 
@@ -156,7 +158,7 @@ class _Catalog2State extends State<Catalog2> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Catalog3()),
+                            MaterialPageRoute(builder: (context) => SkCatalog3()),
                           );
                         }
                     ),

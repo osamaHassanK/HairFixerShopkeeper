@@ -23,11 +23,9 @@ var width = "MediaQuery.of(context).size.height";
 class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
   var _image;
 
-
   @override
   Widget build(BuildContext context) {
-    return
-      SafeArea(
+    return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -48,17 +46,21 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                       top: 10,
                       left: 5,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0,right: 8.0),
-                        child:
-                        Image.asset("assets/backarrow.png",scale: 4,),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                        child: Image.asset(
+                          "assets/backarrow.png",
+                          scale: 4,
+                        ),
                       ),
                     ),
                     Positioned(
                       top: 10,
                       right: 5,
-                      child: Image.asset("assets/settingicon.png",scale: 4,),
+                      child: Image.asset(
+                        "assets/settingicon.png",
+                        scale: 4,
+                      ),
                     ),
-
                     Column(
                       children: [
                         const SizedBox(
@@ -132,16 +134,16 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                               top: 10, left: 30, right: 30, bottom: 10),
                           child: TextFormField(
                               decoration: InputDecoration(
-                                labelText: "e.g Men’s Beauty Salon",
-                                filled: true,
-                                fillColor: Color(0xffF6F6F6),
-                                contentPadding: const EdgeInsets.only(
-                                    left: 14.0, bottom: 6.0, top: 8.0),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
+                            labelText: "e.g Men’s Beauty Salon",
+                            filled: true,
+                            fillColor: Color(0xffF6F6F6),
+                            contentPadding: const EdgeInsets.only(
+                                left: 14.0, bottom: 6.0, top: 8.0),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide:
                                     BorderSide(color: Colors.transparent),
-                                    borderRadius: BorderRadius.circular(10)),
-                              )),
+                                borderRadius: BorderRadius.circular(10)),
+                          )),
                         ),
                         Row(
                           children: const [
@@ -160,19 +162,18 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10, left: 30, right: 30),
-                          child:
-                          TextFormField(
+                          child: TextFormField(
                               decoration: InputDecoration(
-                                labelText: "Enter your shop address",
-                                filled: true,
-                                fillColor: Color(0xffF6F6F6),
-                                contentPadding: const EdgeInsets.only(
-                                    left: 14.0, bottom: 6.0, top: 8.0),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.transparent),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              )),
+                            labelText: "Enter your shop address",
+                            filled: true,
+                            fillColor: Color(0xffF6F6F6),
+                            contentPadding: const EdgeInsets.only(
+                                left: 14.0, bottom: 6.0, top: 8.0),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.transparent),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          )),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
@@ -191,38 +192,33 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                             ],
                           ),
                         ),
-                  Padding(padding: EdgeInsets.all(12),
-                    child:Container(
-                        color: Colors.transparent,
-                        width: double.infinity,
-                        height: 200,
-                        child:Stack(
-                          children: [
-                            Center(
-                              child:  ElevatedButton(
-                                onPressed: () => getImage(ImgSource.Gallery),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.blue,
-                                ),
-                                child: Text(
-                                  "Upload Image".toUpperCase(),
-                                  style: TextStyle(color: Colors.transparent),
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child:
-                              _image != null ? Image.file(File(_image.path),) : Container(),
-                            ),
-
-
-                          ],
-                        )
-
-                    ),
-                  ),
-
-
+                        Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Container(
+                              color: Color(0xffF6F6F6),
+                              width: double.infinity,
+                              height: 200,
+                              child: Stack(
+                                children: [
+                                  Center(
+                                      child: InkWell(
+                                    onTap: () => getImage(ImgSource.Gallery),
+                                    child: Container(
+                                      child: Text("upload Image"),
+                                      width: 100,
+                                      height: 20,
+                                    ),
+                                  )),
+                                  Center(
+                                    child: _image != null
+                                        ? Image.file(
+                                            File(_image.path),
+                                          )
+                                        : Container(),
+                                  ),
+                                ],
+                              )),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Row(
@@ -252,18 +248,18 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                 height: 32,
                                 child: TextFormField(
                                     decoration: InputDecoration(
-                                      labelText: "10 AM",
-                                      filled: true,
-                                      fillColor: Color(0xffF6F6F6),
-                                      contentPadding: const EdgeInsets.only(
-                                          left: 14.0, bottom: 6.0, top: 8.0),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0xffF6F6F6),
-                                        ),
-                                        borderRadius: BorderRadius.circular(10.0),
-                                      ),
-                                    )),
+                                  labelText: "10 AM",
+                                  filled: true,
+                                  fillColor: Color(0xffF6F6F6),
+                                  contentPadding: const EdgeInsets.only(
+                                      left: 14.0, bottom: 6.0, top: 8.0),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xffF6F6F6),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                )),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(right: 19, left: 19),
@@ -277,19 +273,19 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                 height: 32,
                                 child: TextFormField(
                                     decoration: InputDecoration(
-                                      alignLabelWithHint: false,
-                                      labelText: "11 PM",
-                                      filled: true,
-                                      fillColor: Color(0xffF6F6F6),
-                                      contentPadding: const EdgeInsets.only(
-                                          left: 14.0, bottom: 6.0, top: 8.0),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0xffF6F6F6),
-                                        ),
-                                        borderRadius: BorderRadius.circular(10.0),
-                                      ),
-                                    )),
+                                  alignLabelWithHint: false,
+                                  labelText: "11 PM",
+                                  filled: true,
+                                  fillColor: Color(0xffF6F6F6),
+                                  contentPadding: const EdgeInsets.only(
+                                      left: 14.0, bottom: 6.0, top: 8.0),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xffF6F6F6),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                )),
                               ),
                             ],
                           ),
@@ -299,41 +295,54 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           child: SizedBox(
                             width: 120,
                             height: 48,
-                            child:
-                            ElevatedButton(
-                              child: Text(' Done ',style: TextStyle(fontSize: 19),),
+                            child: ElevatedButton(
+                              child: Text(
+                                ' Done ',
+                                style: TextStyle(fontSize: 19),
+                              ),
                               style: ElevatedButton.styleFrom(
                                 primary: Color(0xffD7A700),
                                 onPrimary: Colors.white,
                                 shape: const BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(5))),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5))),
                               ),
                               onPressed: () {
-                                showDialog(context: context, builder: (context){
-                                  return AlertDialog(
-                                    title: Text("Congratulation",style: TextStyle(color: Color(0xffD7A700)),
-                                      textAlign: TextAlign.center,),
-                                    content: Text("Your Shop has been Registered successfully"),
-                                    actions: <Widget>[
-                                      Center(
-                                        child: ElevatedButton(
-                                            onPressed: (){
-                                              Navigator.of(context).pushReplacement(
-                                                  MaterialPageRoute(builder: (context)=> Catalog1(),));
-
-                                            }, child:Text("close")),
-                                      ),
-                                    ],
-                                  );
-                                });
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Text(
+                                          "Congratulation",
+                                          style: TextStyle(
+                                              color: Color(0xffD7A700)),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        content: Text(
+                                            "Your Shop has been Registered successfully"),
+                                        actions: <Widget>[
+                                          Center(
+                                            child: ElevatedButton(
+                                                onPressed: () {
+                                                  Navigator.of(context)
+                                                      .pushReplacement(
+                                                          MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Catalog1(),
+                                                  ));
+                                                },
+                                                child: Text("close")),
+                                          ),
+                                        ],
+                                      );
+                                    });
                               },
                             ),
                           ),
                         )
-
                       ],
                     ),
-          ],
+                  ],
                 ),
               ],
             ),
@@ -342,6 +351,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
       ),
     );
   }
+
   Future getImage(ImgSource source) async {
     var image = await ImagePickerGC.pickImage(
         enableCloseButton: true,

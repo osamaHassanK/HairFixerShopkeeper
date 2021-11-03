@@ -1,10 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/edit_services.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sign_in.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_catalog.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 
 
 class Services extends StatefulWidget {
@@ -17,20 +15,6 @@ class Services extends StatefulWidget {
 class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _widgetOptions = <Widget>[
-
-      SkHomeScreen(),
-      Notifications(),
-      LoginScreen(),
-      Services(),
-      ShopRegistration(),
-      SkHomeScreen(),
-      Notifications(),
-      LoginScreen(),
-      Services(),
-      ShopRegistration(),
-
-    ];
 
     final gridImages = [
       "assets/hair1.png",
@@ -43,18 +27,6 @@ class _ServicesState extends State<Services> {
       "assets/hair8.png",
       "assets/hair9.png",
       "assets/hair10.png",
-    ];
-    final text1 = [
-      "Hair Cut",
-      "Shave",
-      "Body Treatment",
-      "Body Treatment",
-      "Pedicure",
-      "Manicure",
-      "Hair Spa",
-      "Hand & Foot Spa",
-      "Massage",
-      "Hair Removal",
     ];
     return SafeArea(
         child: Scaffold(
@@ -90,7 +62,7 @@ class _ServicesState extends State<Services> {
                               scale: 4,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           InkWell(
@@ -229,12 +201,12 @@ class _ServicesState extends State<Services> {
                                   width: 154,
                                   height: 72.0,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.transparent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(15),
-                                    child: Image.asset(gridImages[0],
+                                    child: Image.asset(gridImages[5],
                                       fit: BoxFit.fitWidth,
                                     ),
                                   ),
@@ -268,11 +240,11 @@ class _ServicesState extends State<Services> {
                                       ),
                                     ],
                                   ),
-                                  child: Align(
+                                  child: const Align(
                                     alignment: FractionalOffset.bottomCenter,
                                     child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 8.0),
-                                      child: const Text("Shave",textAlign: TextAlign.center,
+                                      padding: EdgeInsets.only(bottom: 8.0),
+                                      child: Text("Shave",textAlign: TextAlign.center,
                                         style: TextStyle(color: Colors.black,fontSize: 13),
                                       ),
                                     ),
@@ -285,7 +257,7 @@ class _ServicesState extends State<Services> {
                                   width: 154,
                                   height: 72.0,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.transparent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: ClipRRect(
@@ -351,7 +323,7 @@ class _ServicesState extends State<Services> {
                                   width: 154,
                                   height: 72.0,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.transparent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: ClipRRect(
@@ -407,7 +379,7 @@ class _ServicesState extends State<Services> {
                                   width: 154,
                                   height: 72.0,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.transparent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: ClipRRect(
@@ -470,7 +442,7 @@ class _ServicesState extends State<Services> {
                                 width: 154,
                                 height: 72.0,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: ClipRRect(
@@ -526,7 +498,7 @@ class _ServicesState extends State<Services> {
                                 width: 154,
                                 height: 72.0,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: Colors.transparent,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: ClipRRect(

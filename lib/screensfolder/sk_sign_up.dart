@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
+import 'shop_registration.dart';
+
 class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -265,25 +267,33 @@ class SignUpScreen extends StatelessWidget {
                                           const SizedBox(
                                             height: 5,
                                           ),
-                                          Container(
-                                            width: MediaQuery.of(context).size.width * 0.25,
-                                            height: 40,
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(10),
-                                                gradient: const LinearGradient(
-                                                    begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter,
-                                                    colors: [
-                                                      Color(0xffD7A700),
-                                                      Color(0xffD7A700)
-                                                    ])),
-                                            child: const Center(
-                                              child: Text("LOGIN",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 18,
-                                                      fontWeight: FontWeight.w900)),
+                                          InkWell(
+                                            child:   Container(
+                                              width: MediaQuery.of(context).size.width * 0.25,
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  gradient: const LinearGradient(
+                                                      begin: Alignment.topCenter,
+                                                      end: Alignment.bottomCenter,
+                                                      colors: [
+                                                        Color(0xffD7A700),
+                                                        Color(0xffD7A700)
+                                                      ])),
+                                              child: const Center(
+                                                child: Text("LOGIN",
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 18,
+                                                        fontWeight: FontWeight.w900)),
+                                              ),
                                             ),
+                                            onTap: (){
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) =>  ShopRegistration()),
+                                              );
+                                            },
                                           ),
                                           const SizedBox(
                                             height: 6,

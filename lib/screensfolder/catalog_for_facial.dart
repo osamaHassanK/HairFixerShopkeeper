@@ -1,15 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
-class SkCatalog4 extends StatefulWidget {
-  const SkCatalog4({Key? key}) : super(key: key);
+class SkCatalog3 extends StatefulWidget {
+  const SkCatalog3({Key? key}) : super(key: key);
 
   @override
-  _SkCatalog4State createState() => _SkCatalog4State();
+  _SkCatalog3State createState() => _SkCatalog3State();
 }
 
-class _SkCatalog4State extends State<SkCatalog4> {
+class _SkCatalog3State extends State<SkCatalog3> {
   var _image;
   @override
   Widget build(BuildContext context) {
@@ -142,7 +143,13 @@ class _SkCatalog4State extends State<SkCatalog4> {
                             shape: const BeveledRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(5))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => CatalogService()),
+                            );
+
+                          },
                         ),
                         ElevatedButton(
                           child: Text(' Done ',style: TextStyle(fontSize: 18),),
