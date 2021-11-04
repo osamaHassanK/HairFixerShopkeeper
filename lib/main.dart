@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context)  => ChangeNotifierProvider (
-  create: (context) => GoogleSignInProvider(),
-  child: MaterialApp(
-    debugShowCheckedModeBanner: false,
+    create: (context) => GoogleSignInProvider(),
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: StartingScreen(),
     ),
   );
-  }
+}
 
 // Future main()async {
 //   WidgetsFlutterBinding.ensureInitialized();

@@ -172,7 +172,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 padding: const EdgeInsets.only(left: 24.0,right: 15.0,top: 5),
                 child: Container(
                   width: double.infinity,
-                  height: 160,
+                  height: 170,
                   decoration: BoxDecoration(
                     color: Color(0xffFBFBFB),
                     borderRadius: BorderRadius.circular(12),

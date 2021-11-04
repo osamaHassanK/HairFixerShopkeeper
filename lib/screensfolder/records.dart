@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'appointement_detail.dart';
 import 'bottomnavigatorbar.dart';
 
 class Records extends StatefulWidget {
@@ -232,7 +233,9 @@ class _RecordsState extends State<Records> {
                               shape: const BeveledRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(5))),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,MaterialPageRoute(builder:(context)=>DetailOfAppointment()));
+                            },
                           ),
                         ],
                       ),
