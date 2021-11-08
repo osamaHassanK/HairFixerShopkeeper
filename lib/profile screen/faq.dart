@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'profile.dart';
+import 'package:hairfixxer_shopkeeper/profile%20screen/profile.dart';
 class FAQ extends StatefulWidget {
   const FAQ({Key? key}) : super(key: key);
 
