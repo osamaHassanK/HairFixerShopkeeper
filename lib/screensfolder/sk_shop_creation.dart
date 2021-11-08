@@ -323,6 +323,13 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                         actions: <Widget>[
                                           Center(
                                             child: ElevatedButton(
+                                              style:  ElevatedButton.styleFrom(
+                                              primary: Color(0xffD5A300),
+                                      shape: RoundedRectangleBorder(
+                                      //to set border radius to button
+                                      borderRadius: BorderRadius.circular(10)),
+
+                                      ),
                                                 onPressed: () {
                                                   Navigator.of(context)
                                                       .pushReplacement(
