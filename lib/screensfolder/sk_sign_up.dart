@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
 
 import 'shop_registration.dart';
 
 class SignUpScreen extends StatelessWidget {
+  TextField1 _text =TextField1();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -69,200 +72,21 @@ class SignUpScreen extends StatelessWidget {
                                           SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(30),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                      color: Colors.black26.withOpacity(0.1),
-                                                      blurRadius: 1,
-                                                      offset: const Offset(0, 4))
-                                                ],),
-                                              child: TextFormField(
-                                                validator: (val) {
-                                                  if (val!.isEmpty) {
-                                                    return "Please enter your email";
-                                                  } else if (!val.contains('@')) {
-                                                    return ("Please enter a valid email");
-                                                  }
-                                                  return null;
-                                                },
-                                                // controller: _emailController,
-                                                decoration: InputDecoration(
-                                                  prefixIcon: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        left: 25, top: 12, bottom: 12, right: 20),
-                                                    child: Image.asset(
-                                                      'assets/userimage.png',
-                                                      scale: 4,
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                  ),
-                                                  fillColor: Colors.white,
-                                                  filled: true,
-                                                  enabledBorder: OutlineInputBorder(
-                                                      borderSide: BorderSide(color: Colors.transparent),
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  border: OutlineInputBorder(
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  labelText: 'Username',
-                                                  labelStyle: TextStyle(
-                                                      color: Colors.black12,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontSize: 18),
-                                                ),
-                                              ),
-                                            ),
+                                            child:_text.textField1(null,"assets/userimage.png",Colors.white,true,"Username",30),
                                           ),
                                           SizedBox(height: 7,),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(30),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                      color: Colors.black26.withOpacity(0.1),
-                                                      blurRadius: 1,
-                                                      offset: const Offset(0, 4))
-                                                ],),
-                                              child: TextFormField(
-                                                validator: (val) {
-                                                  if (val!.isEmpty) {
-                                                    return "Please enter your email";
-                                                  } else if (!val.contains('@')) {
-                                                    return ("Please enter a valid email");
-                                                  }
-                                                  return null;
-                                                },
-                                                // controller: _emailController,
-                                                decoration: InputDecoration(
-                                                  prefixIcon: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        left: 25, top: 12, bottom: 12, right: 20),
-                                                    child: Image.asset(
-                                                      'assets/userimage.png',
-                                                      scale: 4,
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                  ),
-                                                  fillColor: Colors.white,
-                                                  filled: true,
-                                                  enabledBorder: OutlineInputBorder(
-                                                      borderSide: BorderSide(color: Colors.transparent),
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  border: OutlineInputBorder(
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  labelText: 'Username',
-                                                  labelStyle: TextStyle(
-                                                      color: Colors.black12,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontSize: 18),
-                                                ),
-                                              ),
-                                            ),
+                                            child:_text.textField1(_text.validatorEmail(),"assets/userimage.png",Colors.white,true,"Email",30),
                                           ),
                                           SizedBox(height: 7,),Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(30),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                      color: Colors.black26.withOpacity(0.1),
-                                                      blurRadius: 1,
-                                                      offset: const Offset(0, 4))
-                                                ],),
-                                              child: TextFormField(
-                                                validator: (val) {
-                                                  if (val!.isEmpty) {
-                                                    return "Please enter your email";
-                                                  } else if (!val.contains('@')) {
-                                                    return ("Please enter a valid email");
-                                                  }
-                                                  return null;
-                                                },
-                                                // controller: _emailController,
-                                                decoration: InputDecoration(
-                                                  prefixIcon: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        left: 25, top: 12, bottom: 12, right: 20),
-                                                    child: Image.asset(
-                                                      'assets/userimage.png',
-                                                      scale: 4,
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                  ),
-                                                  fillColor: Colors.white,
-                                                  filled: true,
-                                                  enabledBorder: OutlineInputBorder(
-                                                      borderSide: BorderSide(color: Colors.transparent),
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  border: OutlineInputBorder(
-                                                      borderRadius: BorderRadius.circular(30)),
-                                                  labelText: 'Username',
-                                                  labelStyle: const TextStyle(
-                                                      color: Colors.black12,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontSize: 18),
-                                                ),
-                                              ),
-                                            ),
+                                            child: _text.textField1(_text.validatorPasword(),"assets/userimage.png",Colors.white,true,"Password",30),
                                           ),
                                           SizedBox(height: 7,),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(boxShadow: [
-                                                BoxShadow(
-                                                    color: Colors.black26.withOpacity(0.1),
-                                                    blurRadius: 1,
-                                                    offset: const Offset(0, 4))
-                                              ], borderRadius: BorderRadius.circular(30)),
-                                              child: TextFormField (
-                                                // obscureText: isHiddenPassword,
-                                                validator: (val) {
-                                                  if (val!.isEmpty) {
-                                                    return "Please enter a password";
-                                                  }
-                                                  if (val.length < 6) {
-                                                    return "Please enter atleast 6 char";
-                                                  }
-                                                },
-                                                // controller: _passwordController,
-                                                decoration: InputDecoration(
-                                                    prefixIcon: Padding(
-                                                      padding: const EdgeInsets.only(
-                                                          left: 25, top: 12, bottom: 12, right: 20),
-                                                      child: Image.asset(
-                                                        'assets/password.png',
-                                                        scale: 5,
-                                                        fit: BoxFit.fill,
-                                                      ),
-                                                    ),
-                                                    fillColor: Colors.white,
-                                                    filled: true,
-                                                    enabledBorder: OutlineInputBorder(
-                                                        borderSide:
-                                                        const BorderSide(color: Colors.transparent),
-                                                        borderRadius: BorderRadius.circular(30)),
-                                                    border: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(30)),
-                                                    labelText: 'Confrim Password',
-                                                    labelStyle: const TextStyle(
-                                                        color: Colors.black12,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 18),
-                                                    suffixIcon: Padding(
-                                                      padding: const EdgeInsets.only(right: 20),
-                                                      child: InkWell(
-                                                          onTap: (){},
-                                                          child: const Icon(
-                                                            Icons.visibility,
-                                                          )),
-                                                    )),
-                                              ),
-                                            ),
+                                            child:_text.textField1(_text.validatorPasword(),"assets/password.png",Colors.white,true,"confirm Password",30),
                                           ),
                                           const SizedBox(
                                             height: 5,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/notification_view.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 
 import 'bottomnavigatorbar.dart';
@@ -51,19 +53,7 @@ class _NotificationsState extends State<Notifications> {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      color: Color(0xffD5A300),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          "Notification",
-                          style: TextStyle(fontSize: 28),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )
+                    topTitle(context,"Notification")
                   ],
                 ),
                 backgroundColor: Colors.white,
@@ -185,16 +175,22 @@ class _NotificationsState extends State<Notifications> {
                                               children: [
                                                 Column(
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 10,
-                                                              top: 20),
-                                                      child: CircleAvatar(
-                                                          radius: 35,
-                                                          backgroundImage:
-                                                              AssetImage(
-                                                                  "assets/men.png")),
+                                                    InkWell(
+                                                       onTap:(){
+                                                         Navigator.push(context,MaterialPageRoute(builder:(context)=> NotificationView()));
+                                                       },
+                                                      child:Padding(
+                                                        padding:
+                                                        const EdgeInsets.only(
+                                                            left: 10,
+                                                            top: 20),
+                                                        child: CircleAvatar(
+                                                            radius: 35,
+                                                            backgroundImage:
+                                                            AssetImage(
+                                                                "assets/men.png")),
+                                                      ),
+
                                                     ),
                                                   ],
                                                 ),

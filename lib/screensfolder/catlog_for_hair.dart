@@ -1,6 +1,7 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
@@ -13,8 +14,8 @@ class Catalog1 extends StatefulWidget {
 }
 
 class _Catalog1State extends State<Catalog1> {
+  TextField1 textF = TextField1();
   var _image;
-
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -23,28 +24,8 @@ class _Catalog1State extends State<Catalog1> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0,right: 15,left: 15,bottom: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/backarrow.png",scale: 4,),
-                    Image.asset("assets/settingicon.png",scale: 4,),
-                  ],
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height*0.070,
-                color: Color(0xffD6A600),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text("Create your Catalog",
-                    style:TextStyle(fontSize: 25,color: Colors.white),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
+              topIcon(context,"backarrow.png","setting.png"),
+              topTitle(context, "Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
@@ -52,11 +33,8 @@ class _Catalog1State extends State<Catalog1> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
-                      children: const [
-                        Text("Hair Cuts Catalog",style: TextStyle(
-                            color: Colors.black,fontSize: 23,fontWeight: FontWeight.bold
-                        ),
-                        ),
+                      children:[
+                        textSK("Hair Cuts Catalog", 23, Colors.black, FontWeight.bold, TextAlign.center),
                       ],
                     ),
                     const SizedBox(
@@ -64,7 +42,8 @@ class _Catalog1State extends State<Catalog1> {
                     ),
                     Row(
                       children: [ Text("Name",style: TextStyle(fontSize: 16,color: Colors.black),)],
-                    ),
+                    ), textF.textField1(null,"backarrow.png"),
+                    textF.textField1(null,null),
                     TextFormField(
                         decoration: InputDecoration(
                           alignLabelWithHint: false,
@@ -73,6 +52,10 @@ class _Catalog1State extends State<Catalog1> {
                           fillColor: Color(0xffF6F6F6),
                           contentPadding: const EdgeInsets.only(
                               left: 14.0, bottom: 6.0, top: 8.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(10.0),

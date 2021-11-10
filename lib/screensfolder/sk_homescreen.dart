@@ -305,7 +305,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                         Text(
                                           "Upcomming Apointments",
                                           style: TextStyle(
-                                              fontSize: 18,
+                                              fontSize: 15,
                                               fontWeight: FontWeight.w700,
                                               color: Colors.black),
                                         ),
