@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:provider/provider.dart';
@@ -50,26 +51,7 @@ class _ProfileState extends State<Profile> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Padding(
-                padding:
-                const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Row(
-                  children: [
-                    InkWell(
-                        onTap: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (builder) => BottomNavigatorBar()),
-                                  (route) => false);
-                        },
-                        child: Image.asset(
-                          "assets/images/back.png",
-                          scale: 3,
-                        )),
-                  ],
-                ),
-              ),
+              topIcon(context,"backarrow.png","home.png"),
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 50,
@@ -129,7 +111,7 @@ class _ProfileState extends State<Profile> {
                               color: Colors.white70,
                             ),
                           ),
-                          fillColor: Color(0xff1289D9),
+                          fillColor: Color(0xffD5A300),
                           shape: CircleBorder(),
                           onPressed: () {
                             showDialog(
@@ -154,7 +136,7 @@ class _ProfileState extends State<Profile> {
                                                 children: [
                                                   Icon(
                                                     Icons.image,
-                                                    color: Color(0xff1289D9),
+                                                    color: Color(0xffD5A300),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -180,7 +162,7 @@ class _ProfileState extends State<Profile> {
                                                 children: [
                                                   Icon(
                                                     Icons.camera,
-                                                    color: Color(0xff1289D9),
+                                                    color: Color(0xffD5A300),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -345,6 +327,7 @@ class _ProfileState extends State<Profile> {
                   height: 40,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        primary: Color(0xffD5A300),
                         shape: RoundedRectangleBorder(
                           //to set border radius to button
                             borderRadius: BorderRadius.circular(10)),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 import 'sk_notification.dart';
@@ -23,16 +24,7 @@ class _CatalogServiceState extends State<CatalogService> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0,right: 15,left: 15,bottom: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/backarrow.png",scale: 4,),
-                    Image.asset("assets/settingicon.png",scale: 4,),
-                  ],
-                ),
-              ),
+            topIcon(context,"backarrow.png","setting.png"),
               Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height*0.070,
