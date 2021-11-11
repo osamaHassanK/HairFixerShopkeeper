@@ -37,6 +37,28 @@ Widget topIcon(BuildContext context,String assets1,String assets2,){
     ),
   );
 }
+Widget containerSk(BuildContext context,
+    [dynamic h,dynamic w,Color? color,BorderRadius? bRadius,
+      String? text,Widget? widget ]){
+  return Container(
+    height:MediaQuery.of(context).size.height*h,
+    width: MediaQuery.of(context).size.width*w,
+    child:widget,
+    decoration: (
+        BoxDecoration( color:color, borderRadius:bRadius,
+        )
+    ),
+  );
+}
+
+Widget textSk(BuildContext context,[String? text,TextAlign? align,Color? color,
+  FontWeight? weight,double? size
+]){
+  return Text(
+    text!,textAlign: align,
+    style: TextStyle(color:color,fontWeight: weight,fontSize: size,),
+  );
+}
 
 Widget textSK(String text,double size,Color color,
     FontWeight weight, TextAlign align){
@@ -50,7 +72,7 @@ class TextField1{
 
 
   Widget textField1([Function? validate,String? imageSk,Color? fillcolor,
-    bool? filled,String? label,double? radius,]){
+    bool? filled,String? label,double? radius,double? circular]){
     return Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),

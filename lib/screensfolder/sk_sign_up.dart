@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/widget.dart';
 
 import 'shop_registration.dart';
 
 class SignUpScreen extends StatelessWidget {
   TextField1 _text =TextField1();
+//  WidgetsSk _widgetcall= WidgetsSk();
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +22,7 @@ class SignUpScreen extends StatelessWidget {
                     Column(children: [
                       Stack(
                         children: [
-                          Container(
-                            color: Colors.white,
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 1,
-                          ),
+                          containerSk(context,0.1,1,Colors.white,null,null,null),
                         ],
                       ),
                       Stack(children: [
@@ -35,20 +33,12 @@ class SignUpScreen extends StatelessWidget {
                               "assets/screen.png",
                               fit: BoxFit.cover,
                             )),
-                        Positioned(
-                            top: 7,
-                            left: 20,
-                            child: Column(
+                        Positioned(  top: 7,  left: 20, child:
+                        Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Sign In",
-                                  style: TextStyle(
-                                      fontSize: 42,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                                textSk(context,"Sign In",null,Colors.white,FontWeight.bold,42),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 8),
                                   child: Container(
