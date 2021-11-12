@@ -1,78 +1,13 @@
 import 'package:flutter/material.dart';
 
-Widget topTitle(BuildContext context,String text,){
- return Container(
-    width: double.infinity,
-    height: MediaQuery.of(context).size.height*0.060,
-    color: Color(0xffD6A600),
-    child: Padding(
-      padding: const EdgeInsets.only(top: 10.0),
-      child: Text(text,
-        style:TextStyle(fontSize: 23,color: Colors.white),
-        textAlign: TextAlign.center,
-      ),
-    ),
-  );
-}
 
-Widget topIcon(BuildContext context,String assets1,String assets2,){
-  return   Padding(
-    padding: const EdgeInsets.only(top: 15.0,right: 15,left: 15,bottom: 10),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        InkWell(
-          onTap: (){
-            Navigator.pop(context,true);
-          },
-          child:Image.asset("assets/$assets1",scale: 4,),
-        ),
-        InkWell(
-          onTap: (){
-            Navigator.pop(context,true);
-          },
-          child:Image.asset("assets/$assets2",scale: 4,),
-        )
-      ],
-    ),
-  );
+Widget imageSk(String image,double? scale,BoxFit fit ){
+  return Image.asset(image,scale:scale,fit: fit);
 }
-Widget containerSk(BuildContext context,
-    [dynamic h,dynamic w,Color? color,BorderRadius? bRadius,
-      String? text,Widget? widget ]){
-  return Container(
-    height:MediaQuery.of(context).size.height*h,
-    width: MediaQuery.of(context).size.width*w,
-    child:widget,
-    decoration: (
-        BoxDecoration( color:color, borderRadius:bRadius,
-        )
-    ),
-  );
-}
-
-Widget textSk(BuildContext context,[String? text,TextAlign? align,Color? color,
-  FontWeight? weight,double? size
-]){
-  return Text(
-    text!,textAlign: align,
-    style: TextStyle(color:color,fontWeight: weight,fontSize: size,),
-  );
-}
-
-Widget textSK(String text,double size,Color color,
-    FontWeight weight, TextAlign align){
-  return Text(text,
-    style: TextStyle(fontSize:size,color: color,fontWeight:weight),
-     textAlign:align
-  );
-}
-
 class TextField1{
 
-
   Widget textField1([Function? validate,String? imageSk,Color? fillcolor,
-    bool? filled,String? label,double? radius,double? circular]){
+    bool? filled,String? label,double? radius,double? circular,bool? booli]){
     return Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
@@ -83,6 +18,7 @@ class TextField1{
     offset: const Offset(0, 4))
     ],),
     child:TextFormField(
+      obscureText:true,
       validator: validatorEmail(),
       // controller: _emailController,
       decoration: InputDecoration(

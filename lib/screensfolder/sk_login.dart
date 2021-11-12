@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_sign_up.dart';
 import 'package:provider/provider.dart';
 

@@ -1,12 +1,8 @@
 import 'dart:io';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
-import 'package:provider/provider.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'FAQ.dart';

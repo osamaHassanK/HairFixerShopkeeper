@@ -6,8 +6,8 @@ class WidgetsSk{
        [dynamic h,dynamic w,Color? color,BorderRadius? bRadius,
          String? text,Widget? widget ]){
      return Container(
-       height:MediaQuery.of(context).size.height*h,
-       width: MediaQuery.of(context).size.width*w,
+       height:h,
+       width: w,
        child:widget,
        decoration: (
            BoxDecoration( color:color, borderRadius:bRadius,

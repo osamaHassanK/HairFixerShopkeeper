@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 
 class NotificationView extends StatefulWidget {
   const NotificationView({Key? key}) : super(key: key);

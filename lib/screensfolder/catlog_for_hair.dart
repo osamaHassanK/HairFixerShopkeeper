@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 class Catalog1 extends StatefulWidget {
@@ -34,7 +35,7 @@ class _Catalog1State extends State<Catalog1> {
                   children: [
                     Row(
                       children:[
-                        textSK("Hair Cuts Catalog", 23, Colors.black, FontWeight.bold, TextAlign.center),
+                        textSk(context,"Hair Cuts Catalog",TextAlign.center,Colors.black,FontWeight.bold,23),
                       ],
                     ),
                     const SizedBox(
