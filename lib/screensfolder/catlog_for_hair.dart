@@ -3,17 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
-import 'package:hairfixxer_shopkeeper/widget/image_picker_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 class Catalog1 extends StatefulWidget {
-  Catalog1({Key? key,required this.name1,required this.function}) : super(key: key);
+  const Catalog1({Key? key}) : super(key: key);
 
-  String name1;
-  Function function;
+
 
   @override
   _Catalog1State createState() => _Catalog1State();
@@ -42,15 +40,18 @@ class _Catalog1State extends State<Catalog1> {
                   children: [
                     Row(
                       children:[
-                        textSk(context,widget.name1,TextAlign.center,Colors.black,FontWeight.bold,23),
+                        textSk(context,"Hair Style Catalog",TextAlign.center,Colors.black,FontWeight.bold,23),
                       ],
                     ),
                     const SizedBox(
                       height: 40,
                     ),
                     Row(
-                      children: [ Text("Name",style: TextStyle(fontSize: 16,color: Colors.black),)],
+                      children: [
+                        textSk(context,"Name",TextAlign.start,Colors.black,FontWeight.normal,16),
+                      ],
                     ),
+                    SizedBox(height: 10,),
                     textFieldN("e.g Circle Beared",true),
                     const SizedBox(
                       height: 15,
@@ -113,7 +114,7 @@ class _Catalog1State extends State<Catalog1> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => widget.function()),
+                                MaterialPageRoute(builder: (context) => Catalog2()),
                               );
                             },
                         ),
