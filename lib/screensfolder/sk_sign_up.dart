@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
-import 'package:hairfixxer_shopkeeper/widget/button_widget.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/shop_registration.dart';
 import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 
@@ -22,11 +22,6 @@ class SignUpScreen extends StatelessWidget {
               Column(children: [
                 Stack(
                   children: [
-                    // Container(
-                    //   width: double.infinity,
-                    //   height: 100,
-                    //   color: Colors.red,
-                    // ),
                     containerSk(context, 100, double.infinity, Colors.white,
                         BorderRadius.circular(0), null, null),
                   ],
@@ -40,13 +35,6 @@ class SignUpScreen extends StatelessWidget {
                       BorderRadius.circular(0),
                       null,
                       imageSk("assets/screen.png", 4, BoxFit.cover)),
-                  // Container(
-                  //     height: 650,
-                  //     width: double.infinity,
-                  //     child: Image.asset(
-                  //       "assets/screen.png",
-                  //       fit: BoxFit.cover,
-                  //     )),
                   Positioned(
                       top: 7,
                       left: 20,
@@ -54,8 +42,7 @@ class SignUpScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          textSk(context, "Sign Up", null, Colors.white,
-                              FontWeight.bold, 42),
+                          textSk(context, "Sign Up", null, Colors.white,FontWeight.bold, 42),
                           Padding(
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
@@ -68,24 +55,11 @@ class SignUpScreen extends StatelessWidget {
                               child: SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        "WELCOME!",
-                                        style: TextStyle(
-                                            fontSize: 42,
-                                            color: Color(0xff0D3737)),
-                                      ),
+                                    Padding( padding: EdgeInsets.only(top: 10),
+                                      child:textSk(context,"WELCOME!",TextAlign.center,Color(0xff0D3737),null,42),
                                     ),
-                                    SizedBox(
-                                      height: 2,
-                                    ),
-                                    Text(
-                                      "Login To Your Acount",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Color(0xff0D3737)),
-                                    ),
+                                    SizedBox(height: 2,),
+                                    textSk(context,"Login To Your Acount",TextAlign.center,Color(0xff0D3737),null,20),
                                     SizedBox(
                                       height: 5,
                                     ),
@@ -141,50 +115,16 @@ class SignUpScreen extends StatelessWidget {
                                     const SizedBox(
                                       height: 5,
                                     ),
-                                    buttonSk(context, 40, 120,"REGISTRATION", 12,Color(0xffD7A700),3,BorderRadius.circular(12),),
-                                    // SizedBox(
-                                    //     height: 40,
-                                    //     width: 100,
-                                    //     child: ElevatedButton(onPressed: (){},
-                                    //     child:Text("REGISTER",style: TextStyle(fontSize:13),),style: ElevatedButton.styleFrom(
-                                    //         primary: Color(0xffD7A700),
-                                    //         elevation: 3,
-                                    //         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),)
-                                    //     ),),
-                                    // ),
-                                    // InkWell(
-                                    //   child: Container(
-                                    //     width:
-                                    //         MediaQuery.of(context).size.width *
-                                    //             0.25,
-                                    //     height: 40,
-                                    //     decoration: BoxDecoration(
-                                    //         borderRadius:
-                                    //             BorderRadius.circular(10),
-                                    //         gradient: const LinearGradient(
-                                    //             begin: Alignment.topCenter,
-                                    //             end: Alignment.bottomCenter,
-                                    //             colors: [
-                                    //               Color(0xffD7A700),
-                                    //               Color(0xffD7A700)
-                                    //             ])),
-                                    //     child: const Center(
-                                    //       child: Text("LOGIN",
-                                    //           style: TextStyle(
-                                    //               color: Colors.white,
-                                    //               fontSize: 18,
-                                    //               fontWeight: FontWeight.w900)),
-                                    //     ),
-                                    //   ),
-                                    //   onTap: () {
-                                    //     Navigator.push(
-                                    //       context,
-                                    //       MaterialPageRoute(
-                                    //           builder: (context) =>
-                                    //               ShopRegistration()),
-                                    //     );
-                                    //   },
-                                    // ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ShopRegistration()));
+                                      },
+                                      child:containerSk(context,40,120,Color(0xffD7A700),BorderRadius.circular(10),null,
+                                          textSk(context,"REGISTRATION",TextAlign.center,Color(0xffD4700),FontWeight.normal,12))),
+                                      //buttonSk(context, 40, 120,"REGISTRATION", 12,Color(0xffD7A700),3,BorderRadius.circular(12),)),
                                     const SizedBox(
                                       height: 6,
                                     ),
@@ -216,13 +156,7 @@ class SignUpScreen extends StatelessWidget {
                                   height: 1,
                                   width: 100,
                                 ),
-                                const Text(
-                                  "or Login with",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                                textSk(context,"or login with",TextAlign.center,Colors.white,null,15),
                                 Container(
                                   color: Colors.white,
                                   height: 1,
@@ -241,10 +175,8 @@ class SignUpScreen extends StatelessWidget {
                                     onTap: () {
                                       //signInWithGoogle();
                                     },
-                                    child: Image.asset(
-                                      "assets/google.png",
-                                      scale: 4,
-                                    )),
+                                    child:imageSk("assets/google.png",4, BoxFit.none)
+                         ),
                                 SizedBox(
                                   width:MediaQuery.of(context).size.width * 0.150,
                                 ),
@@ -252,8 +184,7 @@ class SignUpScreen extends StatelessWidget {
                                     onTap: () {
                                       // FacebookLogin();
                                     },
-                                    child: Image.asset( "assets/facebook.png", scale: 4,
-                                    )),
+                                    child:imageSk("assets/facebook.png",4,BoxFit.none),),
                               ],
                             ),
                           ),

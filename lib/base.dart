@@ -35,9 +35,9 @@ class TextField1{
         filled: filled,
         enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.transparent),
-            borderRadius: BorderRadius.circular(radius!)),
+            borderRadius: BorderRadius.circular(radius==null?radius=12:radius=radius)),
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(radius!)),
+            borderRadius: BorderRadius.circular(radius==null?radius=12:radius=radius)),
         labelText: label,
         labelStyle: TextStyle(
             color: Colors.black12,

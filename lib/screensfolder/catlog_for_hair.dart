@@ -3,12 +3,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
+import 'package:hairfixxer_shopkeeper/widget/image_picker_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 class Catalog1 extends StatefulWidget {
-  const Catalog1({Key? key}) : super(key: key);
+  Catalog1({Key? key,required this.name1,required this.function}) : super(key: key);
+
+  String name1;
+  Function function;
 
   @override
   _Catalog1State createState() => _Catalog1State();
@@ -17,6 +22,8 @@ class Catalog1 extends StatefulWidget {
 class _Catalog1State extends State<Catalog1> {
   TextField1 textF = TextField1();
   var _image;
+
+
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -26,7 +33,7 @@ class _Catalog1State extends State<Catalog1> {
           child: Column(
             children: [
               topIcon(context,"backarrow.png","setting.png"),
-              topTitle(context, "Catalog"),
+              topTitle(context, "Create your Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
@@ -35,7 +42,7 @@ class _Catalog1State extends State<Catalog1> {
                   children: [
                     Row(
                       children:[
-                        textSk(context,"Hair Cuts Catalog",TextAlign.center,Colors.black,FontWeight.bold,23),
+                        textSk(context,widget.name1,TextAlign.center,Colors.black,FontWeight.bold,23),
                       ],
                     ),
                     const SizedBox(
@@ -43,25 +50,8 @@ class _Catalog1State extends State<Catalog1> {
                     ),
                     Row(
                       children: [ Text("Name",style: TextStyle(fontSize: 16,color: Colors.black),)],
-                    ), textF.textField1(null,"backarrow.png"),
-                    textF.textField1(null,null),
-                    TextFormField(
-                        decoration: InputDecoration(
-                          alignLabelWithHint: false,
-                          labelText: "e.g Circle Beared",
-                          filled: true,
-                          fillColor: Color(0xffF6F6F6),
-                          contentPadding: const EdgeInsets.only(
-                              left: 14.0, bottom: 6.0, top: 8.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.transparent),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        )),
+                    ),
+                    textFieldN("e.g Circle Beared",true),
                     const SizedBox(
                       height: 15,
                     ),
@@ -69,19 +59,8 @@ class _Catalog1State extends State<Catalog1> {
                       children: const [ Text("Description",
                         style: TextStyle(fontSize: 16,color: Colors.black),)],
                     ),
-                    TextFormField(
-                        decoration: InputDecoration(
-                          alignLabelWithHint: false,
-                          labelText: "e.g HC 8987",
-                          filled: true,
-                          fillColor: Color(0xffF6F6F6),
-                          contentPadding: const EdgeInsets.only(
-                              left: 14.0, bottom: 6.0, top: 8.0),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.transparent),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        )),
+                    SizedBox(height: 10,),
+                    textFieldN("e.g HC 8987",true),
                     SizedBox(
                       height: 15,
                     ),
@@ -134,7 +113,7 @@ class _Catalog1State extends State<Catalog1> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Catalog2()),
+                                MaterialPageRoute(builder: (context) => widget.function()),
                               );
                             },
                         ),
@@ -183,7 +162,8 @@ class _Catalog1State extends State<Catalog1> {
           style: TextStyle(color: Colors.blue),
         ));
     setState(() {
-      _image = image;
+       _image = image;
     });
   }
+
 }

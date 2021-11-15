@@ -335,7 +335,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                                       .pushReplacement(
                                                           MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Catalog1(),
+                                                        Catalog1(name1:"Hair Cut Catalog",),
                                                   ));
                                                 },
                                                 child: Text("close")),

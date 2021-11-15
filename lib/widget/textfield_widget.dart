@@ -73,3 +73,25 @@ class _FieldState extends State<Field> {
     );
   }
 }
+
+Widget textFieldN(String label,bool filled){
+  return TextFormField(
+      decoration: InputDecoration(
+        alignLabelWithHint: false,
+        labelText: label,
+        filled: filled,
+        fillColor: Color(0xffF6F6F6),
+        contentPadding: const EdgeInsets.only(
+            left: 14.0, bottom: 6.0, top: 8.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent),
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ));
+
+
+}
