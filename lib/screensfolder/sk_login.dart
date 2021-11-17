@@ -1,15 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_sign_up.dart';
+import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../auth/googlesigninprovider.dart';
 
 class LoginScreen extends StatelessWidget {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
+
       child: Scaffold(
         backgroundColor: Colors.blueGrey,
         body: SingleChildScrollView(
@@ -28,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   Stack(children: [
                     Container(
-                        height: MediaQuery.of(context).size.height * 0.850,
+                        height:700,
                         width: double.infinity,
                         child: Image.asset(
                           "assets/screen.png",
@@ -56,8 +63,7 @@ class LoginScreen extends StatelessWidget {
                                         BorderRadius.all(Radius.circular(20)),
                                     color: Colors.white),
                                 width: MediaQuery.of(context).size.width * 0.9,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.470,
+                                height: MediaQuery.of(context).size.height * 0.470,
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
@@ -81,146 +87,21 @@ class LoginScreen extends StatelessWidget {
                                       ),
                                       SizedBox(
                                         height: 5,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                  color: Colors.black26
-                                                      .withOpacity(0.1),
-                                                  blurRadius: 1,
-                                                  offset: const Offset(0, 4))
-                                            ],
-                                          ),
-                                          child: TextFormField(
-                                            validator: (val) {
-                                              if (val!.isEmpty) {
-                                                return "Please enter your email";
-                                              } else if (!val.contains('@')) {
-                                                return ("Please enter a valid email");
-                                              }
-                                              return null;
-                                            },
-                                            // controller: _emailController,
-                                            decoration: InputDecoration(
-                                              prefixIcon: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 25,
-                                                    top: 12,
-                                                    bottom: 12,
-                                                    right: 20),
-                                                child: Image.asset(
-                                                  'assets/userimage.png',
-                                                  scale: 4,
-                                                  fit: BoxFit.fill,
-                                                ),
-                                              ),
-                                              fillColor: Colors.white,
-                                              filled: true,
-                                              enabledBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30)),
-                                              border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30)),
-                                              labelText: 'Username',
-                                              labelStyle: TextStyle(
-                                                  color: Colors.black12,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                                      ),Padding(padding:EdgeInsets.all(8),
+                                      child:Field(controller: emailController, labelText:"email",
+                                          path:"assets/userimage.png", obsecureText:false, eye: false),),
                                       SizedBox(
                                         height: 7,
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: Colors.black26
-                                                        .withOpacity(0.1),
-                                                    blurRadius: 1,
-                                                    offset: const Offset(0, 4))
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(30)),
-                                          child: TextFormField(
-                                            // obscureText: isHiddenPassword,
-                                            validator: (val) {
-                                              if (val!.isEmpty) {
-                                                return "Please enter a password";
-                                              }
-                                              if (val.length < 6) {
-                                                return "Please enter atleast 6 char";
-                                              }
-                                            },
-                                            // controller: _passwordController,
-                                            decoration: InputDecoration(
-                                                prefixIcon: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 25,
-                                                          top: 12,
-                                                          bottom: 12,
-                                                          right: 20),
-                                                  child: Image.asset(
-                                                    'assets/password.png',
-                                                    scale: 5,
-                                                    fit: BoxFit.fill,
-                                                  ),
-                                                ),
-                                                fillColor: Colors.white,
-                                                filled: true,
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                            color: Colors
-                                                                .transparent),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30)),
-                                                border: OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30)),
-                                                labelText: 'Password',
-                                                labelStyle: TextStyle(
-                                                    color: Colors.black12,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 18),
-                                                suffixIcon: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 20),
-                                                  child: InkWell(
-                                                      onTap: () {},
-                                                      child: Icon(
-                                                        Icons.visibility,
-                                                      )),
-                                                )),
-                                          ),
-                                        ),
+                                      Padding(padding: EdgeInsets.all(8),
+                                      child: Field(controller: passwordController,labelText: "password",eye: true,obsecureText: true, path:'assets/password.png',),
                                       ),
                                       SizedBox(
                                         height: 5,
                                       ),
                                       Container(
                                         width:
-                                            MediaQuery.of(context).size.width *
-                                                0.25,
+                                            MediaQuery.of(context).size.width * 0.25,
                                         height: 40,
                                         decoration: BoxDecoration(
                                             borderRadius:
@@ -257,117 +138,117 @@ class LoginScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 30,
-                                  ),
-                                  Container(
-                                    color: Colors.white,
-                                    height: 1,
-                                    width: 80,
-                                  ),
-                                  Text(
-                                    "or Login with",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Container(
-                                    color: Colors.white,
-                                    height: 1,
-                                    width: 80,
-                                  ),
-                                ],
-                              ),
+                            SizedBox(
+                              height: 10,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 80, top: 10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  InkWell(
-                                      onTap: () {
-                                        final provider =
-                                            Provider.of<GoogleSignInProvider>(
-                                                context,
-                                                listen: false);
-                                        provider.googleLogin();
-                                        //signInWithGoogle();
-                                      },
-                                      child: Image.asset(
-                                        "assets/google.png",
-                                        scale: 4,
-                                      )),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.150,
-                                  ),
-                                  InkWell(
-                                      onTap: () {
-                                        // FacebookLogin();
-                                      },
-                                      child: Image.asset(
-                                        "assets/facebook.png",
-                                        scale: 4,
-                                      )),
-                                ],
+                            Container(
+                              height: 120,
+                              width: MediaQuery.of(context).size.width*0.9,
+                              color: Colors.transparent,
+                              child:Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          Container(
+                                            color: Colors.white,
+                                            height: 1,
+                                            width: 80,
+                                          ),
+                                          Text(
+                                            "or Login with",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Container(
+                                            color: Colors.white,
+                                            height: 1,
+                                            width: 80,
+                                          ),
+                                        ],
+                                      ),
+                                    SizedBox(height: 10,),
+                                    Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          InkWell(
+                                              onTap: () {
+                                                final provider =
+                                                Provider.of<GoogleSignInProvider>(
+                                                    context,
+                                                    listen: false);
+                                                provider.googleLogin();
+                                               // signInWithGoogle();
+                                              },
+                                              child: Image.asset(
+                                                "assets/google.png",
+                                                scale: 4,
+                                              )),
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width *
+                                                0.100,
+                                          ),
+                                          InkWell(
+                                              onTap: () {
+                                                // FacebookLogin();
+                                              },
+                                              child: Image.asset(
+                                                "assets/facebook.png",
+                                                scale: 4,
+                                              )),
+                                        ],
+                                      ),
+                                 SizedBox(height: 10,),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Don't have an acount?",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              Navigator.of(context).pushReplacement(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          SignUpScreen()));
+                                            },
+                                            child:textSk(context,"Register",TextAlign.center,Color(0xff204849),FontWeight.bold
+                                                ,20),
+                                          ),
+                                        ],
+                                      ),
+                                  ],
+                                )
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 38, top: 10),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Don't have an acount?",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.of(context).pushReplacement(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SignUpScreen()));
-                                    },
-                                    child: Text(
-                                      " Register",
-                                      style: TextStyle(
-                                          color: Color(0xff204849),
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+
+                            )
+
                           ],
                         )),
                   ]),
                 ]),
                 Positioned(
-                  top: 25,
-                  left: 90,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Image.asset(
-                      "assets/logo 1.png",
-                      scale: 3,
-                    ),
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: MediaQuery.of(context).size.height * 0.170,
-                  ),
-                ),
+                  top: 20,
+                  right: MediaQuery.of(context).size.width*0.210,
+                  child: containerSk(context,110,200,Colors.white,BorderRadius.circular(30),null,
+                        imageSk("assets/logo 1.png",4,BoxFit.none)),
+
+               ),
               ],
             ),
           ]),

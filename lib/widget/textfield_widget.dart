@@ -46,7 +46,7 @@ class _FieldState extends State<Field> {
             prefixIcon: Padding(
               padding: const EdgeInsets.only(
                   left: 25, top: 12, bottom: 12, right: 20),
-              child: imageSk("", 1,BoxFit.none)
+              child:imageSk(widget.path,4, BoxFit.none)
             ),
             fillColor: Colors.white,
             filled: true,

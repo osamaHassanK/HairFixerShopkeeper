@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 Widget topTitle(BuildContext context,String text,){
   return Container(
     width: double.infinity,
-    height: MediaQuery.of(context).size.height*0.060,
+    height: 50,
     color: Color(0xffD6A600),
     child: Padding(
       padding: const EdgeInsets.only(top: 10.0),

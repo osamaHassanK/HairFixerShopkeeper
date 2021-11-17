@@ -29,10 +29,11 @@ class _NotificationViewState extends State<NotificationView> {
           CircleAvatar(
             radius:50,
           child:imageSk("assets/men.png",1, BoxFit.cover),),
-          Padding(padding: EdgeInsets.only(top: 8,right: 8,left: 8,bottom: 8),
+          Padding(
+            padding: EdgeInsets.only(top: 8,right: 8,left: 8,bottom: 8),
             child:Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(height: 30,width: 110,color: Colors.red,),
                 Column(
                   children: [
                     textSk(context,"Zaryab Ansari",TextAlign.center,Color(0xffC59909),
@@ -46,19 +47,21 @@ class _NotificationViewState extends State<NotificationView> {
                   width: 25,
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     imageSk("assets/msg icon.png",1,BoxFit.none),
                     SizedBox(height: 8.0,),
                     textSk(context,"Mark as Read",TextAlign.center,
-                    Color(0xff76767676),FontWeight.normal,10)
+                    Color(0xff76767676),FontWeight.normal,9)
                   ],
                 ),
-              ],
-            ),
+            ]),
           ),
-         containerSk(context,)
-
-
+          Center(
+            child: textSk(context,"Zaryab Ansari has just requested to book an\n"
+                " appopintment! Select the time slot to\n"
+                " approaved his apointment......."),
+          )
         ],
       ),
     );
