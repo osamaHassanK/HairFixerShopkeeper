@@ -25,6 +25,7 @@ class _NotificationsState extends State<Notifications> {
               child: AppBar(
                 flexibleSpace: Column(
                   children: [
+                    SizedBox(height: 5,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

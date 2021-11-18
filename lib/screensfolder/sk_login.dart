@@ -16,9 +16,8 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
-
-      child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+      child:SafeArea(
+      child:  Scaffold(
         body: SingleChildScrollView(
           child: Column(children: [
             Stack(
@@ -35,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   Stack(children: [
                     Container(
-                        height:700,
+                        height:MediaQuery.of(context).size.height,
                         width: double.infinity,
                         child: Image.asset(
                           "assets/screen.png",
@@ -48,19 +47,13 @@ class LoginScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Sign In",
-                              style: TextStyle(
-                                  fontSize: 42,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                            textSk(context,"Sign In",TextAlign.center,Colors.white,FontWeight.bold,42),
                             Padding(
                               padding: const EdgeInsets.only(top: 8),
                               child: Container(
                                 decoration: BoxDecoration(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(20)),
+                                    BorderRadius.all(Radius.circular(20)),
                                     color: Colors.white),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 height: MediaQuery.of(context).size.height * 0.470,
@@ -69,69 +62,36 @@ class LoginScreen extends StatelessWidget {
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(top: 10),
-                                        child: Text(
-                                          "WELCOME!",
-                                          style: TextStyle(
-                                              fontSize: 42,
-                                              color: Color(0xff0D3737)),
-                                        ),
+                                        child:
+                                        textSk(context,"WELCOME!",TextAlign.center,Color(0xff0D3737),null,40),
                                       ),
                                       SizedBox(
                                         height: 2,
                                       ),
-                                      Text(
-                                        "Login To Your Acount",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color(0xff0D3737)),
-                                      ),
+                                      textSk(context,"Login To Your Acount",TextAlign.center,Color(0xff0D3737),null,20),
                                       SizedBox(
                                         height: 5,
                                       ),Padding(padding:EdgeInsets.all(8),
-                                      child:Field(controller: emailController, labelText:"email",
-                                          path:"assets/userimage.png", obsecureText:false, eye: false),),
+                                        child:Field(controller: emailController, labelText:"email",
+                                            path:"assets/userimage.png", obsecureText:false, eye: false),),
                                       SizedBox(
                                         height: 7,
                                       ),
                                       Padding(padding: EdgeInsets.all(8),
-                                      child: Field(controller: passwordController,labelText: "password",eye: true,obsecureText: true, path:'assets/password.png',),
+                                        child: Field(controller: passwordController,labelText: "password",eye: true,obsecureText: true, path:'assets/password.png',),
                                       ),
                                       SizedBox(
                                         height: 5,
                                       ),
-                                      Container(
-                                        width:
-                                            MediaQuery.of(context).size.width * 0.25,
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            gradient: LinearGradient(
-                                                begin: Alignment.topCenter,
-                                                end: Alignment.bottomCenter,
-                                                colors: [
-                                                  Color(0xffD7A700),
-                                                  Color(0xffD7A700)
-                                                ])),
-                                        child: Center(
-                                          child: Text("LOGIN",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w900)),
-                                        ),
-                                      ),
+                                      containerSk(context,40,MediaQuery.of(context).size.width*0.25,Color(0xffD7A700),
+                                        BorderRadius.circular(10),Padding(padding:EdgeInsets.all(5),
+                                          child: textSk(context,"LOGIN",TextAlign.center,Colors.white, FontWeight.w900,18)
+                                      ),),
                                       SizedBox(
                                         height: 6,
                                       ),
                                       Center(
-                                        child: Text(
-                                          "Forget Password?",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black38),
-                                        ),
+                                        child:textSk(context,"Forget Password?",TextAlign.center,Colors.black38, FontWeight.bold,15),
                                       ),
                                     ],
                                   ),
@@ -146,11 +106,11 @@ class LoginScreen extends StatelessWidget {
                               width: MediaQuery.of(context).size.width*0.9,
                               color: Colors.transparent,
                               child:Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Row(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
@@ -176,8 +136,8 @@ class LoginScreen extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                    SizedBox(height: 10,),
-                                    Row(
+                                      SizedBox(height: 10,),
+                                      Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
@@ -188,7 +148,7 @@ class LoginScreen extends StatelessWidget {
                                                     context,
                                                     listen: false);
                                                 provider.googleLogin();
-                                               // signInWithGoogle();
+                                                // signInWithGoogle();
                                               },
                                               child: Image.asset(
                                                 "assets/google.png",
@@ -208,10 +168,10 @@ class LoginScreen extends StatelessWidget {
                                               )),
                                         ],
                                       ),
-                                 SizedBox(height: 10,),
-                                 Row(
-                                   mainAxisAlignment: MainAxisAlignment.center,
-                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                      SizedBox(height: 10,),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
                                           Text(
                                             "Don't have an acount?",
@@ -232,8 +192,8 @@ class LoginScreen extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                  ],
-                                )
+                                    ],
+                                  )
                               ),
 
                             )
@@ -245,15 +205,16 @@ class LoginScreen extends StatelessWidget {
                 Positioned(
                   top: 20,
                   right: MediaQuery.of(context).size.width*0.210,
-                  child: containerSk(context,110,200,Colors.white,BorderRadius.circular(30),null,
-                        imageSk("assets/logo 1.png",4,BoxFit.none)),
+                  child: containerSk(context,110,200,Colors.white,BorderRadius.circular(30),
+                      imageSk("assets/logo 1.png",4,BoxFit.none)),
 
-               ),
+                ),
               ],
             ),
           ]),
         ),
-      ));
+      )),
+      );
 }
 // Center(
 // child: Text("Forget Password?",style:TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color:

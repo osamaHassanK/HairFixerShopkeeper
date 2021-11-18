@@ -26,7 +26,8 @@ Widget topIcon(BuildContext context,String assets1,String assets2,){
           onTap: (){
             Navigator.pop(context,true);
           },
-          child:Image.asset("assets/$assets1",scale: 4,),
+          child:Padding(padding: EdgeInsets.all(0),
+          child: Image.asset("assets/$assets1",scale: 4,),)
         ),
         InkWell(
           onTap: (){

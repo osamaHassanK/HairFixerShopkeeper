@@ -160,7 +160,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                         ),
                         Padding(
                           padding: EdgeInsets.all(12),
-                          child:containerSk(context,200,double.infinity,Color(0xffF6F6F6),null,null,Stack(
+                          child:containerSk(context,200,double.infinity,Color(0xffF6F6F6),null,Stack(
                             children: [
                               Center(
                                   child: InkWell(
@@ -205,7 +205,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                 width: 22,
                               ),
                               containerSk(context, 32, 120, Colors.transparent,
-                                  null, null, textFieldN("10AM", true)),
+                                  null, textFieldN("10AM", true)),
                               const Padding(
                                 padding: EdgeInsets.only(right: 19, left: 19),
                                 child: Text(
@@ -213,8 +213,7 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                                   style: TextStyle(fontSize: 18.5),
                                 ),
                               ),
-                              containerSk(context, 32, 120, Colors.transparent,
-                                  null, null, textFieldN("11AM", true)),
+                              containerSk(context, 32, 120, Colors.transparent,null, textFieldN("11AM", true)),
                             ],
                           ),
                         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 
 
 class DetailOfAppointment extends StatefulWidget {
@@ -43,20 +45,7 @@ class _DetailOfAppointmentState extends State<DetailOfAppointment> {
                           ],
                         )
                       ],),
-                  ),
-                  Container(
-                      color: Color(0xffD5A300),
-                      height: 50,
-                      width: double.infinity,
-                      child:Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: Text(shopName,textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,fontSize: 23,fontWeight: FontWeight.bold,
-                          ),),
-                      )
-
-                  ),
+                  ),topTitle(context,shopName),
                   SizedBox(height: 10,),
                   Row(
                     children: [

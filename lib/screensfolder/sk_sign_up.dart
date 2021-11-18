@@ -26,11 +26,11 @@ class SignUpScreen extends StatelessWidget {
                 Stack(
                   children: [
                     containerSk(context, 100, double.infinity, Colors.white,
-                        BorderRadius.circular(0), null, null),
+                        BorderRadius.circular(0), null),
                   ],
                 ),
                 Stack(children: [
-                  containerSk(context, 650, double.infinity, Colors.white,BorderRadius.circular(0), null,
+                  containerSk(context, 700, double.infinity, Colors.white,BorderRadius.circular(0),
                       imageSk("assets/screen.png", 4, BoxFit.cover)),
                   Positioned(
                       top: 7,
@@ -42,8 +42,7 @@ class SignUpScreen extends StatelessWidget {
                           textSk(context, "Sign Up", null, Colors.white,FontWeight.bold, 42),
                           Padding(
                             padding: const EdgeInsets.only(top: 8),
-                            child:containerSk(context,510,MediaQuery.of(context).size.width*0.9,Colors.white,BorderRadius.circular(20),
-                            null, Column(
+                            child:containerSk(context,510,MediaQuery.of(context).size.width*0.9,Colors.white,BorderRadius.circular(20), Column(
                                 children: [
                                   Padding( padding: EdgeInsets.only(top: 10),
                                     child:textSk(context,"WELCOME!",TextAlign.center,Color(0xff0D3737),null,42),
@@ -92,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
                                                 builder: (context) =>
                                                     ShopRegistration()));
                                       },
-                                      child:containerSk(context,40,120,Color(0xffD7A700),BorderRadius.circular(10),null,
+                                      child:containerSk(context,40,120,Color(0xffD7A700),BorderRadius.circular(10),
                                         Center(child: textSk(context,"REGISTRATION",TextAlign.center,Colors.white,FontWeight.normal,12)),)),
                                   const SizedBox(
                                     height: 6,
@@ -155,7 +154,7 @@ class SignUpScreen extends StatelessWidget {
               Positioned(
                   top: MediaQuery.of(context).size.height * 0.04,
                   right: MediaQuery.of(context).size.height * 0.04,
-                  child: containerSk(context, 100, 110, Colors.white,BorderRadius.circular(100), null,imageSk("assets/signinlogo.png",3, BoxFit.none),
+                  child: containerSk(context, 100, 110, Colors.white,BorderRadius.circular(100),imageSk("assets/signinlogo.png",3, BoxFit.none),
                   ))
             ],
           ),
