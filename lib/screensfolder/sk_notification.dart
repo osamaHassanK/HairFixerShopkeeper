@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/notification_view.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 
 import 'bottomnavigatorbar.dart';
@@ -69,11 +70,7 @@ class _NotificationsState extends State<Notifications> {
                       child: Container(
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text(
-                              "All",
-                              style: TextStyle(
-                                  color: Color(0xff4B4B4B), fontSize: 15),
-                            ),
+                            child:textSk(context,"All",null, Color(0xff4B4B4B),null,15)
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),

@@ -123,17 +123,10 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           ),
                         ),
                         Row(
-                          children: const [
+                          children:[
                             SizedBox(
                               width: 8,
-                            ),
-                            Text(
-                              "2. Enter your Shop Address",
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black, //(0xff474747),
-                              ),
-                            ),
+                            ), textSk(context,"2. Enter your Shop Address",null,Colors.black,null,15),
                           ],
                         ),
                         Padding(
@@ -142,19 +135,13 @@ class _ShopRegistrationFormState extends State<ShopRegistrationForm> {
                           child: textFieldN("Enter Your shop address", true),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
+                          padding:  EdgeInsets.only(top: 8.0),
                           child: Row(
-                            children: const [
+                            children:[
                               SizedBox(
                                 width: 8,
                               ),
-                              Text(
-                                "3. Upload your Image",
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black, //(0xff474747),
-                                ),
-                              ),
+                              textSk(context,"3. Upload your Image",null,Colors.black,null,15),
                             ],
                           ),
                         ),

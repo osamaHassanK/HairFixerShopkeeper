@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(20)),
                                     color: Colors.white),
                                 width: MediaQuery.of(context).size.width * 0.9,
-                                height: MediaQuery.of(context).size.height * 0.470,
+                                height: MediaQuery.of(context).size.height * 0.480,
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
@@ -115,20 +115,14 @@ class LoginScreen extends StatelessWidget {
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
                                           SizedBox(
-                                            width: 20,
+                                            width: 15,
                                           ),
                                           Container(
                                             color: Colors.white,
                                             height: 1,
                                             width: 80,
                                           ),
-                                          Text(
-                                            "or Login with",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold),
-                                          ),
+                                          textSk(context,"or login with",null,Colors.white,FontWeight.bold,17),
                                           Container(
                                             color: Colors.white,
                                             height: 1,
