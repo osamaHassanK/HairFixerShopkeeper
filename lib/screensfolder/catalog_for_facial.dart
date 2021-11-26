@@ -22,7 +22,7 @@ class _SkCatalog3State extends State<SkCatalog3> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-            topIcon(context,"backarrow.png","setting.png"),
+            topIcon(context,"backarrow.png","setting.png",4),
               topTitle(context,"Create Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),

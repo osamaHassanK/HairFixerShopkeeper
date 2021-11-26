@@ -47,7 +47,7 @@ class _ProfileState extends State<Profile> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              topIcon(context,"backarrow.png","home.png"),
+              topIcon(context,"backarrow.png","home.png",4),
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 50,

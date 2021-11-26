@@ -16,7 +16,7 @@ Widget topTitle(BuildContext context,String text,){
   );
 }
 
-Widget topIcon(BuildContext context,String assets1,String assets2,){
+Widget topIcon(BuildContext context,String assets1,String assets2,double s){
   return   Padding(
     padding: const EdgeInsets.only(top: 15.0,right: 15,left: 15,bottom: 10),
     child: Row(
@@ -33,7 +33,7 @@ Widget topIcon(BuildContext context,String assets1,String assets2,){
           onTap: (){
             Navigator.pop(context,true);
           },
-          child:Image.asset("assets/$assets2",scale: 4,),
+          child:Image.asset("assets/$assets2",scale: s,),
         )
       ],
     ),

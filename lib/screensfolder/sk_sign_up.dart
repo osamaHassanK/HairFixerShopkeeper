@@ -92,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
                                                     ShopRegistration()));
                                       },
                                       child:containerSk(context,40,120,Color(0xffD7A700),BorderRadius.circular(10),
-                                        Center(child: textSk(context,"REGISTRATION",TextAlign.center,Colors.white,FontWeight.normal,12)),)),
+                                        Center(child: textSk(context,"REGISTRATION",TextAlign.center,Colors.white,FontWeight.normal,14)),)),
                                   const SizedBox(
                                     height: 6,
                                   ),

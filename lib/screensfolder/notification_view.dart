@@ -18,7 +18,7 @@ class _NotificationViewState extends State<NotificationView> {
       body: SingleChildScrollView(
         child:Column(
           children: [
-            topIcon(context,"backarrow.png","home.png"),
+            topIcon(context,"backarrow.png","home.png",4),
             topTitle(context, "Notification"),
             Padding(padding:EdgeInsets.only(top: 8,left: 8,right: 8),
               child:Row(

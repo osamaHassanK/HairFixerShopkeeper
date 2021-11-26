@@ -30,7 +30,7 @@ class _Catalog1State extends State<Catalog1> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-              topIcon(context,"backarrow.png","setting.png"),
+              topIcon(context,"backarrow.png","setting.png",4),
               topTitle(context, "Create your Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),

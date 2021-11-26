@@ -25,7 +25,7 @@ class _CatalogServiceState extends State<CatalogService> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-            topIcon(context,"backarrow.png","setting.png"),
+            topIcon(context,"backarrow.png","setting.png",4),
               Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height*0.070,

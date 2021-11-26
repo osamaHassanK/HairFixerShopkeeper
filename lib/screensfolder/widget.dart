@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 
 import 'catlog_for_hair.dart';
 
@@ -41,13 +42,11 @@ class WidgetsSk{
      return Padding(
        padding: const EdgeInsets.only(top: 20.0),
        child: SizedBox(
-         width: 120,
+         width: 100,
          height: 48,
          child: ElevatedButton(
-           child: Text(
-             ' Done ',
-             style: TextStyle(fontSize: 19),
-           ),
+           child:
+           textSk(context,' Done ',null,Colors.white,FontWeight.bold,19),
            style: ElevatedButton.styleFrom(
              primary: Color(0xffD7A700),
              onPrimary: Colors.white,
@@ -60,14 +59,9 @@ class WidgetsSk{
                  context: context,
                  builder: (context) {
                    return AlertDialog(
-                     title: Text(
-                       "Congratulation",
-                       style: TextStyle(
-                           color: Color(0xffD7A700)),
-                       textAlign: TextAlign.center,
-                     ),
-                     content: Text(
-                         "Your Shop has been Registered successfully"),
+                     title:textSk(context,"congratulation",TextAlign.center,Color(0xffD7A700)
+                     ,FontWeight.normal,null),
+                     content: textSk(context,"Your Shop has been Registered successfully"),
                      actions: <Widget>[
                        Center(
                          child: ElevatedButton(
@@ -87,7 +81,7 @@ class WidgetsSk{
                                          Catalog1(),
                                    ));
                              },
-                             child: Text("close")),
+                             child:textSk(context,"close",null,Colors.white,FontWeight.bold,17), ),
                        ),
                      ],
                    );
