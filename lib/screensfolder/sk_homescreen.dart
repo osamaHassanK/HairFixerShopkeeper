@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/auth/logout.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_info.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_shop_creation.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -378,6 +379,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                   },
                 ),
               ),
+              logout(context),
             ],
           ),
         ),

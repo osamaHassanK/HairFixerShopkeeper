@@ -29,7 +29,6 @@ class _ShopRegistrationState extends State<ShopRegistration> {
                 scale: 4,
               )),
           Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
