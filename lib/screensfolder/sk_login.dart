@@ -3,8 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:hairfixxer_shopkeeper/auth/facebook_auth.dart';
 import 'package:hairfixxer_shopkeeper/auth/forget_passwword.dart';
-import 'package:hairfixxer_shopkeeper/auth/sign_in.dart';
+import 'package:hairfixxer_shopkeeper/auth/with_email/sign_in.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_sign_up.dart';
 import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
@@ -34,11 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     passwordController.dispose();
     super.dispose();
   }
-  Future<UserCredential>signInWithFacebook() async{
-    final LoginResult result=await FacebookAuth.instance.login();
-    final OAuthCredential facebookAuthCredential=FacebookAuthProvider.credential(result.accessToken!.token);
-    return await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-  }
+
   @override
   Widget build(BuildContext context) {
     SignInWithEmail signInWithEmail = SignInWithEmail(email: email, password: password);

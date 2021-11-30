@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/startingscreen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
                 );
               }
               else if(snapshot.hasData){
-                return SkHomeScreen();
+                return BottomNavigatorBar();
               }
               return LoginScreen();
             }

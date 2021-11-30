@@ -379,7 +379,6 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                   },
                 ),
               ),
-              logout(context),
             ],
           ),
         ),

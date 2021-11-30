@@ -1,9 +1,14 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 import 'FAQ.dart';
 
@@ -39,6 +44,11 @@ class _ProfileState extends State<Profile> {
       }
     });
   }
+  final storage = new FlutterSecureStorage();
+  final email=FirebaseAuth.instance.currentUser!.email;
+  final name=FirebaseAuth.instance.currentUser!.displayName;
+  final pic=FirebaseAuth.instance.currentUser!.photoURL;
+
 
   @override
   Widget build(BuildContext context) {
@@ -83,15 +93,13 @@ class _ProfileState extends State<Profile> {
                         ),
                         width: 130,
                         height: 130,
-                        child: _image == null
+                        child: pic == null
                             ? Center(
-                            child: Text("No Image Select",
+                            child: 
+                            Text("No Image Select",
                                 style: TextStyle(
                                     fontSize: 14, color: Colors.black54)))
-                            : Image.file(
-                          _image!,
-                          fit: BoxFit.cover,
-                        ),
+                            : Image.network("$pic",fit: BoxFit.cover,)
                       ),
                     ),
                   ),
@@ -187,10 +195,10 @@ class _ProfileState extends State<Profile> {
                 height: 10,
               ),
               Text(
-                "Zaryab Ansari",
+                "$name",
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
               ),
-              Text("zaryabansari1999@gmail.com"),
+              Text("$email"),
               Padding(
                 padding:
                 const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
@@ -328,28 +336,28 @@ class _ProfileState extends State<Profile> {
                           //to set border radius to button
                             borderRadius: BorderRadius.circular(10)),
                       ),
-                      onPressed: () async {
-                        // await FirebaseAuth.instance.signOut();
-                        // await storage.delete(key: "uid");
-                        // try {
-                        //   final provider = Provider.of<GoogleSignInProvider>(
-                        //       context,
-                        //       listen: false);
-                        //   provider.logout();
-                        // } catch (e) {
-                        //   print("error");
-                        // }
-                        // Navigator.pushAndRemoveUntil(
-                        //     context,
-                        //     MaterialPageRoute(builder: (builder) => SignIn()),
-                        //         (route) => false);
+                      onPressed: () async{
+                        await FirebaseAuth.instance.signOut();
+                        await storage.delete(key: "uid");
+                        try {
+                          final provider = Provider.of<GoogleSignInProvider>(
+                              context,
+                              listen: false);
+                          provider.logout();
+                        } catch (e) {
+                          print("error");
+                        }
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (builder) => LoginScreen()),
+                                (route) => false);
                       },
                       child: Text(
                         "Logout",
                         style: TextStyle(fontSize: 18),
                       )),
                 ),
-              )
+              ),
             ],
           ),
         ),
