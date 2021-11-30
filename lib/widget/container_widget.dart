@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget containerSk(BuildContext context,
-    [double? h,double? w,Color? color,BorderRadius? bRadius,
+    [double? h,double? w,Color? color,final bRadius,
     Widget? widget ]){
   return Container(
     height:h,

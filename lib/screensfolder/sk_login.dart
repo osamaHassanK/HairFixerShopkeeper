@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:hairfixxer_shopkeeper/auth/facebook_auth.dart';
 import 'package:hairfixxer_shopkeeper/auth/forget_passwword.dart';
 import 'package:hairfixxer_shopkeeper/auth/with_email/sign_in.dart';
