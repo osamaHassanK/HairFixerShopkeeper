@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 
 class SignInWithEmail extends StatefulWidget {
@@ -20,7 +21,7 @@ class SignInWithEmail extends StatefulWidget {
       await storage.write(key: "uid", value: userCredential.user?.uid);
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (builder) => SkHomeScreen()),
+          MaterialPageRoute(builder: (builder) => BottomNavigatorBar() ),
               (route) => false);
     } on FirebaseException catch (e) {
       if (e.code == 'user-not-found') {
