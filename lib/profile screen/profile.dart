@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hairfixxer_shopkeeper/auth/change_password.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
@@ -303,7 +304,13 @@ class _ProfileState extends State<Profile> {
                       color: Colors.black38,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => ChangePassword(password: null)),
+                                (route) => false);
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
