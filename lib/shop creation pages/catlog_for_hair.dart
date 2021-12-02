@@ -2,7 +2,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catlog_for_beared.dart';
+import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catlog_for_beared.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';

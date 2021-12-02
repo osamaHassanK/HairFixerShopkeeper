@@ -1,11 +1,14 @@
+import 'dart:ffi';
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/auth/logout.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_info.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_shop_creation.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
+import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
-
-import 'bottomnavigatorbar.dart';
 
 class SkHomeScreen extends StatefulWidget {
   const SkHomeScreen({Key? key}) : super(key: key);
@@ -26,59 +29,29 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 8.0,left: 8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          "assets/backarrow.png",
-                          scale: 4,
-                        ),
-                      ],
+                    containerSk(context,30,260,Colors.white,null,
+                    textSk(context,"Men's Beauty Saloon",TextAlign.center,Color(0xff4D4D4D),
+                    FontWeight.bold,22)),
+                    InkWell(
+                      child: Image.asset(
+                        "assets/notification.png",
+                        scale: 4,
+                      ),
+                      onTap: (){ Navigator.push(context,MaterialPageRoute(
+                        builder:(context) => Notifications(), ));
+                      },
                     ),
-                    Row(
-                      children: [
-                        Image.asset(
-                          "assets/notification.png",
-                          scale: 4,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5),
-                          child: Image.asset(
-                            "assets/settingicon.png",
-                            scale: 4,
-                          ),
-                        ),
-                      ],
-                    )
                   ],
                 ),
-              ),
-              Container(
-                height: 30,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 2.0),
-                  child: Text(
-                    "Men's Beauty Saloon",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xff4D4D4D),
-                      fontSize: 23,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                color: Colors.white,
               ),
               Stack(
                 children: [
                   Image.asset(
                     "assets/barberpic.png", fit: BoxFit.cover,
-                    //height:MediaQuery.of(context).size.height*0.3,
-                    //width: double.infinity,
                   ),
                   Column(
                     children: [
@@ -111,10 +84,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        "(5.0)",
-                                        style: TextStyle(color: Colors.black38),
-                                      ),
+                                      textSk(context,"(5.0)",null,Colors.black38,null,12),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -131,10 +101,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text("2 Reviews",
-                                          style: TextStyle(
-                                            color: Colors.black38,
-                                          )),
+                                      textSk(context,"2 Reviews",null,Colors.black38,null,12),
                                     ],
                                   ),
                                 ),
@@ -144,17 +111,9 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      "open",
-                                      style: TextStyle(
-                                          color: Color(0xffCF9B00),
-                                          fontSize: 12),
-                                    ),
-                                    Text(
-                                      "-close 11 pm",
-                                      style: TextStyle(
-                                          color: Colors.black38, fontSize: 12),
-                                    ),
+                                    textSk(context,"open",null,Color(0xffCF9B00),null,12),
+                                    textSk(context,"-close 11 pm",null,Colors.black38,null,12),
+
                                   ],
                                 )
                               ],
@@ -173,7 +132,7 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 padding: const EdgeInsets.only(left: 24.0,right: 15.0,top: 5),
                 child: Container(
                   width: double.infinity,
-                  height: 170,
+                  height: 160,
                   decoration: BoxDecoration(
                     color: Color(0xffFBFBFB),
                     borderRadius: BorderRadius.circular(12),
@@ -187,76 +146,71 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
 
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              "Shop Details",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black),
-                            ),
-                            ElevatedButton(
-                              child: Text(
-                                'Edit Details',
-                                style: TextStyle(fontSize: 13),
+                            textSk(context,"Shop Details",null,Colors.black,FontWeight.w500,19),
+                            SizedBox(
+                              height: 40,
+                              width: 105,
+
+                              child: ElevatedButton(
+                                child:
+                                textSk(context,'Edit Details',null,Colors.white,FontWeight.w500,13),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xffD7A700),
+                                  onPrimary: Colors.white,
+                                  shape: const BeveledRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5))),
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(builder: (context)=> SkEditInfo(),
+                                      ));},
                               ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xffD7A700),
-                                onPrimary: Colors.white,
-                                shape: const BeveledRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                              ),
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(builder: (context)=> SkEditInfo(),
-                                    ));},
                             ),
                           ],
                         ),
                         Row(
                           children: [
-                            Text("Shop Name:",style: TextStyle(fontSize: 10)),
+                            textSk(context,"Shop Name:",null,Colors.black,FontWeight.w500,10),
                             SizedBox(width: 20,),
-                            Text("Men's Beauty Saloon",style: TextStyle(fontSize: 10))
+                            textSk(context,"Men's Beauty Saloon",null,Colors.black,FontWeight.w500,10),
                           ],
                         ),
-                          SizedBox(height: 8,),
+                          SizedBox(height: 5,),
                         Row(
                           children: [
-                            Text("Shop Address:",style: TextStyle(fontSize: 10),),
+                            textSk(context,"Shop Address:",null,Colors.black,FontWeight.w500,10),
                             SizedBox(width: 5,),
-                            Text(" Hanif Manzil, Shop # 02 Near Shah Abdul Latif",
-                             style: TextStyle(fontSize: 10)),
+                        textSk(context," Hanif Manzil, Shop # 02 Near Shah Abdul Latif",null,Colors.black,FontWeight.w500,10),
                           ],
                         ),
-                          SizedBox(height: 8,),
+                          SizedBox(height: 2,),
                         Row(
                           children: [
-                            SizedBox(width: 72,),
-                            Text("Bhittai RD Lyari, Karachi, Karachi City, Sindh",
-                                style: TextStyle(fontSize: 10))
+                            SizedBox(width: 80,),
+                            textSk(context,"Bhittai RD Lyari, Karachi, Karachi City, Sindh",null,Colors.black,FontWeight.w500,10),
                           ],
                         ),
-                         SizedBox(height: 8,),
+                         SizedBox(height: 5,),
                         Row(
                           children: [
-                            Text("Contact:",style: TextStyle(fontSize: 10)),
+                            textSk(context,"Contact:",null,Colors.black,FontWeight.w500,10),
                             SizedBox(width: 35,),
-                            Text("+923151091315",style: TextStyle(fontSize: 10))
+                            textSk(context,"+923151091315",null,Colors.black,FontWeight.w500,10),
                           ],
                         ),
-                          SizedBox(height: 8,),
+                          SizedBox(height: 5,),
                         Row(
                           children: [
-                            Text("Shop Timings:",style: TextStyle(fontSize: 10)),
+                            textSk(context,"Shop Timings:",null,Colors.black,FontWeight.w500,10),
                             SizedBox(width: 10,),
-                            Text("10AM to 12PM",style: TextStyle(fontSize: 10))
+                            textSk(context,"10AM to 12PM",null,Colors.black,FontWeight.w500,10),
                           ],
                         ),
 
@@ -266,11 +220,14 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                 ),
               ),
               SizedBox(
+                height: 10,
+              ),
+              SizedBox(
                 height: 200,
                 width: MediaQuery.of(context).size.width*0.980,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 4,
+                  itemCount: 7,
                   shrinkWrap: true,
                   padding:
                   EdgeInsets.symmetric(horizontal: 10, vertical: 0),
@@ -278,13 +235,13 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                     return Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(6.0),
                           child: InkWell(
                             onTap: () {
 //Navigator.pushNamed(context, '/message');
                             },
                             child:Container(
-                              width: MediaQuery.of(context).size.width*0.920,
+                              width: MediaQuery.of(context).size.width*0.790,
                               height: 150,decoration: BoxDecoration(
                                 color: Color(0xffFBFBFB),
                                 borderRadius: BorderRadius.circular(12),
@@ -303,18 +260,10 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          "Upcomming Apointments",
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.black),
-                                        ),
+                                        textSk(context,"UPCOMING APOINTMENT",null,Colors.black,FontWeight.w500,14),
                                         ElevatedButton(
-                                          child: Text(
-                                            '  Manage  \nApointment',
-                                            style: TextStyle(fontSize: 11),
-                                          ),
+                                          child:
+                                          textSk(context,'  Manage  \nApointment',null,Colors.white,FontWeight.w500,10),
                                           style: ElevatedButton.styleFrom(
                                             primary: Color(0xffD7A700),
                                             onPrimary: Colors.white,
@@ -327,13 +276,17 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                       ],
                                     ),
                                   ),
+                                  SizedBox(
+                                    height: 10,
+                                    width: 10,
+                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 8,right: 8,bottom: 8),
                                     child: Row(
                                       children: [
-                                        Text("Customer Name:",style: TextStyle(fontSize: 10)),
-                                        SizedBox(width: 13,),
-                                        Text("Rehan Qazmi",style: TextStyle(fontSize: 10))
+                                        textSk(context,"Customer Name:",null,Colors.black,FontWeight.w500,10),
+                                        SizedBox(width: 14,),
+                                        textSk(context,"Rehan Qazmi",null,Colors.black,FontWeight.w500,10),
                                       ],
                                     ),
                                   ),
@@ -341,10 +294,9 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                     padding: const EdgeInsets.only(right: 8.0,left: 8,bottom: 8),
                                     child: Row(
                                       children: [
-                                        Text("Apointment Date:",style: TextStyle(fontSize: 10),),
+                                        textSk(context,"Apointment Date:",null,Colors.black,FontWeight.w500,10),
                                         SizedBox(width: 12,),
-                                        Text("02 september, 2021",
-                                            style: TextStyle(fontSize: 10)),
+                                        textSk(context,"02 september, 2021",null,Colors.black,FontWeight.w500,10),
                                       ],
                                     ),
                                   ),
@@ -352,10 +304,9 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                     padding: const EdgeInsets.only(right: 8.0,left: 8,bottom: 8),
                                     child: Row(
                                       children: [
-                                        Text("Apointment Time:",style: TextStyle(fontSize: 10),),
-                                        SizedBox(width: 5,),
-                                        Text("11:30AM to 12:30Am",
-                                            style: TextStyle(fontSize: 10)),
+                                        textSk(context,"Apointment Time:",null,Colors.black,FontWeight.w500,10),
+                                        SizedBox(width: 12,),
+                                        textSk(context,"11:30AM to 12:30Am",null,Colors.black,FontWeight.w500,10),
                                       ],
                                     ),
                                   ),
@@ -363,9 +314,9 @@ class _SkHomeScreenState extends State<SkHomeScreen> {
                                     padding: const EdgeInsets.only(left: 8,right: 8,),
                                     child: Row(
                                       children: [
-                                        Text("Services:",style: TextStyle(fontSize: 10)),
-                                        SizedBox(width: 45,),
-                                        Text("Hair Cut(800RS)",style: TextStyle(fontSize: 10))
+                                        textSk(context,"Services:",null,Colors.black,FontWeight.w500,10),
+                                        SizedBox(width: 56,),
+                                        textSk(context,"Hair Cut(800RS)",null,Colors.black,FontWeight.w500,10),
                                       ],
                                     ),
                                   ),

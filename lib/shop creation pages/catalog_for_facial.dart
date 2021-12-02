@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/catalog_for_service.dart';
+import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catalog_for_service.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 class SkCatalog3 extends StatefulWidget {

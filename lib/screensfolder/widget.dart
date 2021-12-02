@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catlog_for_hair.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 
-import 'catlog_for_hair.dart';
 
 
 class WidgetsSk{
@@ -92,3 +92,60 @@ class WidgetsSk{
      );
    }
  }
+Widget serviceContainer(BuildContext,context,List index,){
+  return  Column(
+    children: [
+      Stack(
+        children:[
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+            child: Container(
+              height: 100,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 7,
+                    offset: Offset(0,02), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 6.0),
+                  child:
+                  textSk(context,"Hair Cut",TextAlign.center,Colors.black,FontWeight.w400,13),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 6.0,top: 8,),
+            child: Container(
+              width: 154,
+              height: 72.0,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text("30\$"),
+      ),
+    ],
+  );
+}

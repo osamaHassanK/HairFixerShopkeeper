@@ -1,8 +1,14 @@
 
 
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/edit_services.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_catalog.dart';
+import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 
 
 class Services extends StatefulWidget {
@@ -33,77 +39,20 @@ class _ServicesState extends State<Services> {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0,right: 8,left: 8,bottom: 2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.pop(context, '/shopdetail');
-                              },
-                              child: Image.asset(
-                                "assets/backarrow.png",
-                                scale: 4,
-                              )),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context,true);
-                            },
-                            child: Image.asset(
-                              "assets/notification.png",
-                              scale: 4,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context, '/homePage');
-                            },
-                            child: Image.asset(
-                              "assets/settingicon.png",
-                              scale: 4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                topIcon2(context,"backarrow.png","notification.png", 4),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 40,
                   decoration: BoxDecoration(color: Colors.white),
-                  child: const Center(
-                      child: Text(
-                        "Men's Beauty Saloon",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
-                      )),
+                  child:Center(child:
+                      textSk(context,"Men's Beauty Saloon",null,Colors.black,FontWeight.bold,25),),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 45,
                   decoration: BoxDecoration(color: Color(0xffD5A300)),
-                  child: const Center(
-                      child: Text(
-                        "Services",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
-                      )),
+                  child:Center(
+                      child:textSk(context,"Services",null,Colors.white,FontWeight.bold,24),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0,top: 8,bottom: 8),
@@ -120,8 +69,7 @@ class _ServicesState extends State<Services> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text("Create new deals",style: TextStyle(
-                                  color: Colors.white,fontSize: 13),textAlign: TextAlign.center,),
+                              child:textSk(context,"Create new deals",TextAlign.center,Colors.white,FontWeight.w600,13),
                             ),
                           ),
                           onTap: () {
@@ -132,19 +80,18 @@ class _ServicesState extends State<Services> {
                           }
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
+                        padding: const EdgeInsets.only(right: 20.0),
                         child: InkWell(
                             child: Container(
                               height: 32,
-                              width: 100,
+                              width: 130,
                               decoration: BoxDecoration(
                                 color: Color(0xffD5A300),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Edit Services",style: TextStyle(
-                                    color: Colors.white,fontSize: 13),textAlign: TextAlign.center,),
+                                child:textSk(context,"Edit Services",TextAlign.center,Colors.white,FontWeight.w600,13),
                               ),
                             ),
                             onTap: () {
@@ -187,10 +134,9 @@ class _ServicesState extends State<Services> {
                                   child: Align(
                                     alignment: FractionalOffset.bottomCenter,
                                     child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 8.0),
-                                      child: const Text("Hair Cut",textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.black,fontSize: 13),
-                                      ),
+                                      padding: const EdgeInsets.only(bottom: 6.0),
+                                      child:
+                                      textSk(context,"Hair Cut",TextAlign.center,Colors.black,FontWeight.w400,13),
                                     ),
                                   ),
                                 ),
@@ -240,13 +186,12 @@ class _ServicesState extends State<Services> {
                                       ),
                                     ],
                                   ),
-                                  child: const Align(
+                                  child:Align(
                                     alignment: FractionalOffset.bottomCenter,
                                     child: Padding(
-                                      padding: EdgeInsets.only(bottom: 8.0),
-                                      child: Text("Shave",textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.black,fontSize: 13),
-                                      ),
+                                      padding: EdgeInsets.only(bottom: 6.0),
+                                      child:
+                                      textSk(context,"Shave",TextAlign.center,Colors.black,FontWeight.w400,13),
                                     ),
                                   ),
                                 ),
@@ -309,10 +254,9 @@ class _ServicesState extends State<Services> {
                                   child: Align(
                                     alignment: FractionalOffset.bottomCenter,
                                     child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 8.0),
-                                      child: const Text("Facial",textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.black,fontSize: 13),
-                                      ),
+                                      padding: const EdgeInsets.only(bottom: 6.0),
+                                      child:
+                                      textSk(context,"Facial",TextAlign.center,Colors.black,FontWeight.w400,13),
                                     ),
                                   ),
                                 ),
@@ -365,10 +309,9 @@ class _ServicesState extends State<Services> {
                                   child: Align(
                                     alignment: FractionalOffset.bottomCenter,
                                     child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 8.0),
-                                      child: const Text("Hair Color",textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.black,fontSize: 13),
-                                      ),
+                                      padding: const EdgeInsets.only(bottom: 6.0),
+                                      child:
+                                      textSk(context,"Hair Color",TextAlign.center,Colors.black,FontWeight.w400,13),
                                     ),
                                   ),
                                 ),
@@ -429,9 +372,8 @@ class _ServicesState extends State<Services> {
                                   alignment: FractionalOffset.bottomCenter,
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: const Text("Massage",textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.black,fontSize: 13),
-                                    ),
+                                    child:
+                                    textSk(context,"Massage",TextAlign.center,Colors.black,FontWeight.w400,13),
                                   ),
                                 ),
                               ),
@@ -481,33 +423,23 @@ class _ServicesState extends State<Services> {
                                     ),
                                   ],
                                 ),
-                                child: const Align(
+                                child:Align(
                                   alignment: FractionalOffset.bottomCenter,
                                   child: Padding(
                                     padding: EdgeInsets.only(bottom: 8.0),
-                                    child: Text("Pedicure",textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.black,fontSize: 13),
-                                    ),
+                                    child:textSk(context,"Pedicure",TextAlign.center,Colors.black,FontWeight.w400,13,)
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 6.0,top: 8,),
-                              child: Container(
-                                width: 154,
-                                height: 72.0,
-                                decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  borderRadius: BorderRadius.circular(12),
+                              child:containerSk(context,72,154,Colors.transparent,BorderRadius.circular(12), ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Image.asset(gridImages[7],
+                                  fit: BoxFit.fitWidth,
                                 ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.asset(gridImages[7],
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                              ),
+                              ),),
                             )
                           ],
                         ),

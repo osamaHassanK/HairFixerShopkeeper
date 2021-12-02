@@ -26,34 +26,7 @@ class _NotificationsState extends State<Notifications> {
               child: AppBar(
                 flexibleSpace: Column(
                   children: [
-                    SizedBox(height: 5,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Image.asset(
-                            "assets/backarrow.png",
-                            scale:4,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: InkWell(
-                            onTap: (){ Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context)=>  BottomNavigatorBar (),));
-                            },
-                            child: Image.asset(
-                              "assets/home.png",
-                              scale: 4,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    topIcon(context,"backarrow.png","home.png",4),
                     topTitle(context,"Notification")
                   ],
                 ),

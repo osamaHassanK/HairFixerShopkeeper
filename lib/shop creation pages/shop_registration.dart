@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_shop_creation.dart';
+import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/sk_shop_creation.dart';
 
 class ShopRegistration extends StatefulWidget {
   const ShopRegistration({Key? key}) : super(key: key);

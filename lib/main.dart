@@ -3,9 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/startingscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context,snapshot) {
               if(snapshot.connectionState==ConnectionState.waiting){
-                return Center(
+                return  Center(
                   child: CircularProgressIndicator(),
                 );
               }
