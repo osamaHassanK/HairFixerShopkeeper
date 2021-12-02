@@ -2,6 +2,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catlog_for_beared.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
@@ -30,7 +31,7 @@ class _Catalog1State extends State<Catalog1> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-              topIcon(context,"backarrow.png","setting.png",4),
+              topIcon(context,"backarrow.png","setting.png",4,BottomNavigatorBar()),
               topTitle(context, "Create your Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),

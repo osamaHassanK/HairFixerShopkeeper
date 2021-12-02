@@ -68,3 +68,28 @@ class TextField1{
     };
   }
 }
+Widget button(BuildContext context, String text, double width, double height,
+    double radius, double fontSize, var fontWeight) {
+  return Container(
+    width: width,
+    height: height,
+    decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            offset: Offset(0.0, 2.0), //(x,y)
+            blurRadius: 3.0,
+          ),
+        ],
+        borderRadius: BorderRadius.circular(radius),
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xff0EA1F8), Color(0xff0465A7)])),
+    child: Center(
+      child: Text(text,
+          style: TextStyle(
+              color: Colors.white, fontSize: fontSize, fontWeight: fontWeight)),
+    ),
+  );
+}

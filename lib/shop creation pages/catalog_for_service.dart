@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
@@ -26,7 +27,7 @@ class _CatalogServiceState extends State<CatalogService> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-            topIcon(context,"backarrow.png","setting.png",4),
+            topIcon(context,"backarrow.png","setting.png",4,BottomNavigatorBar()),
               Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height*0.070,

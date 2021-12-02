@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
@@ -19,7 +20,7 @@ class _NotificationViewState extends State<NotificationView> {
       body: SingleChildScrollView(
         child:Column(
           children: [
-            topIcon(context,"backarrow.png","home.png",4),
+            topIcon(context,"backarrow.png","home.png",4,Notifications()),
             topTitle(context, "Notification"),
             Padding(padding:EdgeInsets.only(top: 8,left: 8,right: 8),
               child:Row(

@@ -14,12 +14,12 @@ Widget topTitle(BuildContext context,String text,){
     color: Color(0xffD6A600),
     child: Padding(
       padding: const EdgeInsets.only(top: 8.0),
-      child: textSk(context,text,TextAlign.center,Colors.white,FontWeight.w500,24),
+      child: textSk(context,text,TextAlign.center,Colors.white,FontWeight.w500,22),
     ),
   );
 }
 
-Widget topIcon(BuildContext context,String assets1,String assets2,double s){
+Widget topIcon(BuildContext context,String assets1,String assets2,double s,Widget widget){
   return   Padding(
     padding: const EdgeInsets.all(6.0),
     child: Row(
@@ -27,7 +27,7 @@ Widget topIcon(BuildContext context,String assets1,String assets2,double s){
       children: [
         InkWell(
           onTap: (){
-            Navigator.pop(context,true);
+            Navigator.pop(context,MaterialPageRoute(builder:(context)=>widget));
           },
           child:Image.asset("assets/$assets1",scale: 4,)
         ),

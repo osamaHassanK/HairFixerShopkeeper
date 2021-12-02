@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catalog_for_service.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
@@ -22,7 +23,7 @@ class _SkCatalog3State extends State<SkCatalog3> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-            topIcon(context,"backarrow.png","setting.png",4),
+            topIcon(context,"backarrow.png","setting.png",4,BottomNavigatorBar()),
               topTitle(context,"Create Catalog"),
               Padding(
                 padding: const EdgeInsets.all(15.0),

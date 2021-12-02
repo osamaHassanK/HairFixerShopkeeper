@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/profile%20screen/profile.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
 import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
 import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
@@ -84,7 +85,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             key: _formKey,
             child: Column(
               children: [
-                topIcon(context,"backarrow.png","home.png", 4),
+                topIcon(context,"backarrow.png","home.png", 4,Profile()),
                 topTitle(context, "Change Password"),
                 SizedBox(
                   height: 20,

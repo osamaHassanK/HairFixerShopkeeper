@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 import 'catalog_for_facial.dart';
@@ -21,7 +22,7 @@ class _Catalog2State extends State<Catalog2> {
         body:SingleChildScrollView(
           child: Column(
               children: [
-              topIcon(context,"backarrow.png","setting.png",3),
+              topIcon(context,"backarrow.png","setting.png",3,BottomNavigatorBar()),
                 topTitle(context, "Catalog"),
                 Padding(
           padding: const EdgeInsets.all(15.0),

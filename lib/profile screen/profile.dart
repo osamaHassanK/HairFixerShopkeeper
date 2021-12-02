@@ -7,7 +7,6 @@ import 'package:hairfixxer_shopkeeper/auth/change_password.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
@@ -58,7 +57,6 @@ class _ProfileState extends State<Profile> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              topIcon(context,"backarrow.png","home.png",4),
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 50,

@@ -1,0 +1,173 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
+import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/dialogueshow.dart';
+import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+
+import '../base.dart';
+
+class HairCut extends StatefulWidget {
+  const HairCut({Key? key}) : super(key: key);
+
+  @override
+  _HairCutState createState() => _HairCutState();
+}
+
+class _HairCutState extends State<HairCut> {
+  CarouselController carouselController = CarouselController();
+
+  List<Color> _colors = <Color>[
+    Colors.black12,
+    Color(0xff3DB0F4),
+  ];
+  int _currentColorIndex = 0;
+  void _incrementColorIndex() {
+    setState(() {
+      if (_currentColorIndex < _colors.length - 1) {
+        _currentColorIndex++;
+      } else {
+        _currentColorIndex = 0;
+      }
+    });
+  }
+  final haircut = [
+    {
+      'image': "assets/haircut1.png",
+      'text1': ("Massage"),
+      'text2': ("HC 4577"),
+    },
+    {
+      'image': "assets/haircut1.png",
+      'text1': "champe",
+      'text2': ("HC 7037"),
+    },
+    {
+      'image': "assets/haircut2.png",
+      'text1': "Premium Olive Massage",
+      'text2': ("HC 7897"),
+    }
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              topIcon(context,"backarrow.png","notification.png",4,BottomNavigatorBar()),
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    containerSk(context,30,260,Colors.white,null,
+                        textSk(context,"Men's Beauty Saloon",TextAlign.center,Color(0xff4D4D4D),
+                            FontWeight.bold,20)),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              topTitle(context,"Massage Catalog"),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 510,
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                        carouselController: carouselController,
+                        items: haircut
+                            .asMap()
+                            .map((i, haircut) {
+                          return MapEntry(i, Builder(
+                            builder: (BuildContext context) {
+                              return Column(
+                                children: [
+                                  Text(
+                                    '${haircut['text1']}',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  Text(
+                                    '${haircut['text2']}',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Container(
+                                      height: 370,
+                                      margin: EdgeInsets.all(15),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                        BorderRadius.circular(20),
+                                        child: Image.asset(
+                                          '${haircut['image']}',
+                                          fit: BoxFit.cover,
+                                          width: double.infinity,
+                                        ),
+                                      )),
+                                ],
+                              );
+                            },
+                          ));
+                        })
+                            .values
+                            .toList(),
+                        options: CarouselOptions(
+                            autoPlay: false,
+                            viewportFraction: 1,
+                            height: 440,
+                            enableInfiniteScroll: false)),
+                    Spacer(
+                      flex: 2,
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            carouselController.previousPage();
+                          },
+                          child: Container(
+                              width: 50,
+                              height: 30,
+                              child: Image.asset(
+                                "assets/next1.png",
+                                scale: 1,
+                              )),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            carouselController.nextPage();
+                          },
+                          child: Container(
+                              width: 50,
+                              height: 30,
+                              child: Image.asset(
+                                "assets/next2.png",
+                                scale: 1,
+                              )),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10,)
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

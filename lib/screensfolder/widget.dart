@@ -92,7 +92,8 @@ class WidgetsSk{
      );
    }
  }
-Widget serviceContainer(BuildContext,context,List index,){
+Widget serviceContainer(BuildContext,context,String serviceName,String index,
+    double money){
   return  Column(
     children: [
       Stack(
@@ -118,7 +119,7 @@ Widget serviceContainer(BuildContext,context,List index,){
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 6.0),
                   child:
-                  textSk(context,"Hair Cut",TextAlign.center,Colors.black,FontWeight.w400,13),
+                  textSk(context,serviceName,TextAlign.center,Colors.black,FontWeight.w400,13),
                 ),
               ),
             ),
@@ -134,7 +135,7 @@ Widget serviceContainer(BuildContext,context,List index,){
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.asset(,
+                child: Image.asset(index==null ? "cross.png": index,
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -144,7 +145,7 @@ Widget serviceContainer(BuildContext,context,List index,){
       ),
       Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text("30\$"),
+        child: Text( "$money\$"),
       ),
     ],
   );
