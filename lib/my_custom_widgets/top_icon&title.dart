@@ -3,9 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
 
 Widget topTitle(BuildContext context,String text,){
   return Container(

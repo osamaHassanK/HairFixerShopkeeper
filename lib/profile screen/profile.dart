@@ -6,7 +6,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hairfixxer_shopkeeper/auth/change_password.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/privacy.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/login_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 

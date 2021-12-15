@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 
 
 class DetailOfAppointment extends StatefulWidget {

@@ -7,8 +7,8 @@ import 'package:hairfixxer_shopkeeper/catalog%20screens/catalogforhair.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/edit_services.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_catalog.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);
@@ -89,11 +89,11 @@ class _ServicesState extends State<Services> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => EditService()),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => EditService()),
+                          // );
                         }),
                   ),
                 ],

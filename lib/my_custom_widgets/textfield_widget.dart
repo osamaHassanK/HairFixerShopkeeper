@@ -79,8 +79,12 @@ Widget textFieldN(String label,bool filled){
       decoration: InputDecoration(
         alignLabelWithHint: false,
         labelText: label,
+        labelStyle: TextStyle(
+          color: Colors.black26
+        ),
+
         filled: filled,
-        fillColor: Color(0xffF6F6F6),
+        fillColor: Color(0xffFFFBEF),
         contentPadding: const EdgeInsets.only(
             left: 14.0, bottom: 6.0, top: 8.0),
         border: OutlineInputBorder(
@@ -91,6 +95,10 @@ Widget textFieldN(String label,bool filled){
           borderSide: BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.circular(10.0),
         ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.amber),
+          borderRadius: BorderRadius.circular(10.0),
+        )
       ));
 
 

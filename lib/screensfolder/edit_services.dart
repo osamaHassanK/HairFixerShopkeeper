@@ -250,6 +250,9 @@ class _EditServiceState extends State<EditService> {
    }
    Future getImage(ImgSource source) async {
       var image = await ImagePickerGC.pickImage(
+        imageQuality: 50,
+          maxWidth: 1080,
+          maxHeight: 1080,
           enableCloseButton: true,
           closeIcon: Icon(
              Icons.close,
@@ -271,6 +274,8 @@ class _EditServiceState extends State<EditService> {
              "From Gallery",
              style: TextStyle(color: Colors.blue),
           ));
+
+
       setState(() {
          _image = image;
       });

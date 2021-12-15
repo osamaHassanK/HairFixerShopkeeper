@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/profile.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
-import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/login_screen.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/textfield_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 
 
 class ChangePassword extends StatefulWidget {
@@ -27,7 +27,7 @@ class _ChangePasswordState extends State<ChangePassword> {
   // getData() async{
   //   SharedPreferences preferences=await SharedPreferences.getInstance();
   //   setState(() {
-  //     widget.password=preferences.getString('currentPassword');
+  //     my_custom_widgets.password=preferences.getString('currentPassword');
   //   });
   // }
 

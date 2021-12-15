@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
-import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 
 class NotificationView extends StatefulWidget {
   const NotificationView({Key? key}) : super(key: key);

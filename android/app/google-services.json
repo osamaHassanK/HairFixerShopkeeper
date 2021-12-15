@@ -52,6 +52,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "737267961619-4drdamm3jds6n1eqooemm367r94la6i4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hairfixxer_shopkeeper",
+            "certificate_hash": "77f5a1562fd174db3688427f088adf6dfae53f63"
+          }
+        },
+        {
+          "client_id": "737267961619-tj9enrtrau3ja7e4n187kee6j9m29tn1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hairfixxer_shopkeeper",
+            "certificate_hash": "67a623ea2bb4033f55f2c68abe9414798442d704"
+          }
+        },
+        {
           "client_id": "737267961619-gphvk7pa8adnre3gdmpk7gs6ds6pg3eq.apps.googleusercontent.com",
           "client_type": 3
         }

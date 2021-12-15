@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
 import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catlog_for_beared.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/textfield_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
 
 class Catalog1 extends StatefulWidget {

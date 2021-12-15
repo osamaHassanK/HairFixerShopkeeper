@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:hairfixxer_shopkeeper/auth/with_email/sign_up.dart';
 import 'package:hairfixxer_shopkeeper/base.dart';
-import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/textfield_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/MyContainer.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/textfield_widget.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SignUpWithEmail signUpWithEmail=SignUpWithEmail(password: password, confirmPassword: confirmPassword, email: email);
+    SignUpWithEmail signUpWithEmail=SignUpWithEmail(shopKeeperName: userName,password: password, confirmPassword: confirmPassword, email: email);
     return SafeArea(
         child: Scaffold(
           backgroundColor: Colors.blueGrey,
@@ -61,15 +62,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Positioned(
                             top: 7,
                             left: 20,
+                            right: 20,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 textSk(context, "Sign Up", null, Colors.white,FontWeight.bold, 42),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.only(top: 8,),
                                   child:SingleChildScrollView(
-                                    child: containerSk(context,510,MediaQuery.of(context).size.width*0.9,Colors.white,BorderRadius.circular(20), Column(
+                                    child: myUnResponsiveContainer(
+                                      context: context,height:  520,width: MediaQuery.of(context).size.width,color: Colors.white,radiusValue: 20,
+                                      child: Column(
                                       children: [
                                         Padding( padding: EdgeInsets.only(top: 10),
                                           child:textSk(context,"WELCOME!",TextAlign.center,Color(0xff0D3737),null,42),
@@ -119,6 +123,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                                   email = _email.text;
                                                   password = _password.text;
                                                   confirmPassword = _confirmPassword.text;
+
                                                 });
                                                 signUpWithEmail.registration(context);
                                               }
@@ -161,28 +166,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
 
                                 SizedBox(height: 10,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width/4,
-                                    ),
-                                    InkWell(
+                                Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: MediaQuery.of(context).size.width/4,
+                                      ),
+                                      InkWell(
+                                          onTap: () {
+                                            //signInWithGoogle();
+                                          },
+                                          child:imageSk("assets/google.png",4, BoxFit.none)
+                                      ),
+                                      SizedBox(
+                                        width:MediaQuery.of(context).size.width * 0.100,
+                                      ),
+                                      InkWell(
                                         onTap: () {
-                                          //signInWithGoogle();
+                                          // FacebookLogin();
                                         },
-                                        child:imageSk("assets/google.png",4, BoxFit.none)
-                                    ),
-                                    SizedBox(
-                                      width:MediaQuery.of(context).size.width * 0.100,
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        // FacebookLogin();
-                                      },
-                                      child:imageSk("assets/facebook.png",4,BoxFit.none),),
-                                  ],
+                                        child:imageSk("assets/facebook.png",4,BoxFit.none),),
+                                    ],
+                                  ),
                                 ),
                               ],
                             )),

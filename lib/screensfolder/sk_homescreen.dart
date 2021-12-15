@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_edit_info.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
-import 'package:hairfixxer_shopkeeper/widget/container_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/text_widget.dart';
-import 'package:hairfixxer_shopkeeper/widget/top_icon&title.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class SkHomeScreen extends StatefulWidget {

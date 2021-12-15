@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_login.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/login_screen.dart';
 import 'package:provider/provider.dart';
 
 Widget logout(BuildContext context,Widget widget){
