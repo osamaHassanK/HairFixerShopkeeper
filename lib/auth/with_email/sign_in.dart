@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottom_navigation_bar/bottom_navigator_bar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/homescreen.dart';
 
 class SignInWithEmail extends StatefulWidget {
   SignInWithEmail({Key? key,required this.email,required this.password}) : super(key: key);

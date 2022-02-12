@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/catlog_for_hair.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/create_catalog_screen/CreateCatalogScreen.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
 
 
@@ -78,7 +78,7 @@ class WidgetsSk{
                                    .pushReplacement(
                                    MaterialPageRoute(
                                      builder: (context) =>
-                                         Catalog1(),
+                                         CreateCatalogScreen(),
                                    ));
                              },
                              child:textSk(context,"close",null,Colors.white,FontWeight.bold,17), ),

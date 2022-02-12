@@ -3,9 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hairfixxer_shopkeeper/Utilities/Checker.dart';
+import 'package:hairfixxer_shopkeeper/Utilities/base.dart';
 import 'package:hairfixxer_shopkeeper/Utilities/my_navigator.dart';
-import 'package:hairfixxer_shopkeeper/shop%20creation%20pages/create_shop_screen.dart';
+import 'package:hairfixxer_shopkeeper/my_custom_widgets/my_text_widget.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/create_shop_screen/create_shop_screen.dart';
+
+import '../../base.dart';
 
 class ShopRegistration extends StatefulWidget {
   const ShopRegistration({Key? key}) : super(key: key);
@@ -15,6 +20,30 @@ class ShopRegistration extends StatefulWidget {
 }
 
 class _ShopRegistrationState extends State<ShopRegistration> {
+  bool isInternetExist = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // Future.delayed(Duration(seconds: 10),(){
+    //
+    //   isInternetAvailable().then((value) {
+    //     if (value) {
+    //       setState(() {
+    //         isInternetExist = true;
+    //       });
+    //     } else {
+    //       setState(() {
+    //         isInternetExist = false;
+    //       });
+    //     }
+    //   });
+    //
+    // });
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,18 +68,36 @@ class _ShopRegistrationState extends State<ShopRegistration> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    getShopKeeperImageUrl(),
+                    FutureBuilder(
+                      future: isInternetAvailable(),
+                      builder: (BuildContext context, AsyncSnapshot<bool> value){
+                        //if(value==true){
+                          return getShopKeeperImageUrl();
+
+                        // }else{
+                        //
+                        //    Fluttertoast.showToast(msg: "no internet");
+                        //     //showSnackBar( text: "no internet",context: context);
+                        // return Text('no internet');
+                        // }
+
+
+
+                      },
+                    ),
+                    // isInternetExist
+                    //     ? getShopKeeperImageUrl()
+                    //     : showSnackBar(
+                    //         context: context,
+                    //         text: 'No Internet, Please Check Your Network Connection'),
                   ],
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                Text(
-                  'Welcome $shopKeeperName',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Color(0xffD7A600),
-                  ),
+                myResponsiveText(
+                  text: 'Welcome $shopKeeperName',
+                  weight: FontWeight.normal,textColor:Colors.black,initialFontSize: 17 ,
                 ),
                 SizedBox(
                   height: 90,

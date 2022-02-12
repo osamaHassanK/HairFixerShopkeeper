@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/homescreen.dart';
 
 class Verification extends StatefulWidget {
   const Verification({Key? key}) : super(key: key);

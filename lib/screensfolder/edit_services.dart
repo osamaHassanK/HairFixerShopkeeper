@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_screen/CatalogScreen.dart';
 import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
-import 'bottomnavigatorbar.dart';
+import 'bottom_navigation_bar/bottom_navigator_bar.dart';
 
 class EditService extends StatefulWidget {
    const EditService({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _EditServiceState extends State<EditService> {
                                       Navigator.pushAndRemoveUntil(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (builder) => Services()),
+                                              builder: (builder) => CatalogScreen()),
                                               (route) => true);
                                    },
                                    child: Image.asset(

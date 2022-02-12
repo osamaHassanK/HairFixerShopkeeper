@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottom_navigation_bar/bottom_navigator_bar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_screen/CatalogScreen.dart';
 
 
 class EditCatalog extends StatefulWidget {
@@ -54,7 +54,7 @@ class _EditCatalogState extends State<EditCatalog> {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (builder) => Services()),
+                                  builder: (builder) => CatalogScreen()),
                                   (route) => true);
                         },
                         child: Image.asset(

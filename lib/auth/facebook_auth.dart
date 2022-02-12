@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:hairfixxer_shopkeeper/Utilities/Checker.dart';
 
-import '../FirestoreDbRerences.dart';
+import '../Utilities/FirestoreDbRerences.dart';
 
 signInWithFacebook() async {
   try {
@@ -20,8 +20,7 @@ signInWithFacebook() async {
     //----done---//
 
     //-----uploading shopKeeper data----//
-    shopRef
-        .doc(userId)
+    shopUserRef
         .set({
           'shopKeeperName': credentialInfo.user!.displayName,
           'email': credentialInfo.user!.email,

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/FirestoreDbRerences.dart';
+import 'package:hairfixxer_shopkeeper/Utilities/FirestoreDbRerences.dart';
 import 'package:hairfixxer_shopkeeper/Utilities/Checker.dart'
     as globalShopkeeperInfo;
 import 'package:hairfixxer_shopkeeper/screensfolder/varification.dart';
@@ -35,9 +35,7 @@ class SignUpWithEmail extends StatefulWidget {
         //----done---//
 
         //-----uploading shopKeeper data----//
-        shopRef
-            .doc(userCredential.user!.uid)
-            .set({
+        shopUserRef.set({
               'shopKeeperName': shopKeeperName,
               'email': email,
               'password': password,

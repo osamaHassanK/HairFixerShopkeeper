@@ -5,10 +5,14 @@ Widget myButton(
     {required String buttonText,
     double widht = 0,
     double height = 0,
+    textColor,
+    double textFontSize=0,
+     textFontWeight,
     Function()? onTap,
     double cornerRadius = 0}) {
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.black87,
+    onPrimary: textColor,
+
     primary: AppColor.APP_YELLOW_COLOR,
     minimumSize: Size(88, 36),
     padding: EdgeInsets.symmetric(horizontal: widht, vertical: height),
@@ -17,8 +21,12 @@ Widget myButton(
     ),
   );
   return ElevatedButton(
+
     style: raisedButtonStyle,
     onPressed: onTap,
-    child: Text(buttonText),
+    child: Text(
+      buttonText,
+      style: TextStyle(fontWeight: textFontWeight, fontSize: textFontSize),
+    ),
   );
 }

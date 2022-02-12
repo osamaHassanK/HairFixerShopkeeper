@@ -3,7 +3,7 @@ import 'package:hairfixxer_shopkeeper/screensfolder/notification_view.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
 
-import 'bottomnavigatorbar.dart';
+import 'bottom_navigation_bar/bottom_navigator_bar.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({Key? key}) : super(key: key);

@@ -2,11 +2,15 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:hairfixxer_shopkeeper/auth/googlesigninprovider.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 import 'Utilities/Checker.dart';
+
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,29 +19,32 @@ Future main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => GoogleSignInProvider(),
-        child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: FutureBuilder(
-                future: isUserLogin(),
-                builder:
-                    (BuildContext context, AsyncSnapshot<Widget> snapshot) {
-                  if (snapshot.hasData) {
-                    return snapshot.data!;
-                  } else {
-                    return Material(
-                        child: Center(
-                            child: Lottie.asset(
-                                "assets/animations/hair_fixerr_loader_animation.json",
-                                width: 100,
-                                height: 100)));
-                  }
-                })),
-      );
+  Widget build(BuildContext context) => ScreenUtilInit(
+    designSize: Size(360, 690),
+    builder: () => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: FutureBuilder(
+              future: isUserLogin(context),
+              builder:
+                  (BuildContext context, AsyncSnapshot<Widget> snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                } else {
+                  return Material(
+                      child: Center(
+                          child: Lottie.asset(
+                              "assets/animations/hair_fixerr_loader_animation.json",
+                              width: 100,
+                              height: 100)));
+                }
+              }),
+        )),
+  );
 }
 
 // class Checker {

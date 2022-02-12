@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/text_widget.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/top_icon&title.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottom_navigation_bar/bottom_navigator_bar.dart';
 
 import '../base.dart';
 

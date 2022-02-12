@@ -32,3 +32,18 @@ Widget myResponsiveText({
     ),
   );
 }
+
+
+Widget text(BuildContext context, String text, dynamic color, double size,var weight){
+  return Text(
+    text,
+    style: GoogleFonts.poppins(
+        color: color,
+        fontSize: size,
+        fontWeight: weight),
+  );
+}
+
+Widget imagePath(BuildContext context,String image,double scale){
+  return Image.asset("assets/$image",scale: scale,);
+}

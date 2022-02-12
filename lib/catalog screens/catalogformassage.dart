@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/bottomnavigatorbar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/bottom_navigation_bar/bottom_navigator_bar.dart';
 import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/container_widget.dart';
 import 'package:hairfixxer_shopkeeper/my_custom_widgets/dialogueshow.dart';

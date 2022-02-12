@@ -3,16 +3,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:hairfixxer_shopkeeper/profile%20screen/profile.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/records.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_notification.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_screen/CatalogAndDealTabBar.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_screen/CatalogScreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/appoinment_screen/appoinment_screen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/homescreen.dart';
 class BottomNavigatorBar extends StatefulWidget {
 
   static final List<Widget>_widgetOptions=<Widget>[
     SkHomeScreen(),
-    Services(),
-    Records(),
+   CatalogAndDealTabBar(),
+    AppointmentScreen(),
     Profile(),
   ];
 
@@ -41,12 +41,12 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
               ),
               BottomNavyBarItem(
                   icon: Icon(Icons.home_repair_service,size: 28,),
-                  title: Text('Service'),
+                  title: Text('Catalog'),
                 activeColor: Color(0xffCF9B00),
               ),
               BottomNavyBarItem(
-                  icon: Icon(Icons.access_time,size: 28,),
-                  title: Text('Records'),
+                  icon: Icon(Icons.access_time,size: 25,),
+                  title: Text('Appointment',style: TextStyle(fontSize: 13),),
                 activeColor: Color(0xffCF9B00),
               ),
               BottomNavyBarItem(

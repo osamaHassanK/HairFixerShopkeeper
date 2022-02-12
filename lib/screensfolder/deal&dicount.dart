@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/service.dart';
-import 'package:hairfixxer_shopkeeper/screensfolder/sk_homescreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/catalog_screen/CatalogScreen.dart';
+import 'package:hairfixxer_shopkeeper/screensfolder/homescreen.dart';
 
-import 'bottomnavigatorbar.dart';
+import 'bottom_navigation_bar/bottom_navigator_bar.dart';
 
 class DealsAndDiscount extends StatefulWidget {
   const DealsAndDiscount({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class _DealsAndDiscountState extends State<DealsAndDiscount> {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (builder) => Services()),
+                                  builder: (builder) => CatalogScreen()),
                               (route) => true);
                         },
                         child: Image.asset(

@@ -1,5 +1,10 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
+import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:flutter/material.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker_gallery_camera/image_picker_gallery_camera.dart';
+import 'package:path/path.dart';
 
 Widget imageSk(String image,double? scale,BoxFit fit ){
   return Image.asset(image,scale:scale,fit: fit);
@@ -92,4 +97,74 @@ Widget button(BuildContext context, String text, double width, double height,
               color: Colors.white, fontSize: fontSize, fontWeight: fontWeight)),
     ),
   );
+
+
+
+}
+
+
+
+
+
+Future<bool> isInternetAvailable() async {
+  bool result = await DataConnectionChecker().hasConnection;
+  if(result == true) {
+    print('YAY! Free cute dog pics!');
+  } else {
+    print('No internet :( Reason:');
+    print(DataConnectionChecker().lastTryResults);
+  }
+  return result;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+Future selectImageFormGallery(context, ImgSource source,Function( File croppedImage,String imageAddress) callback ) async {
+  var image = await ImagePickerGC.pickImage(
+      enableCloseButton: true,
+      maxWidth: 500,
+      maxHeight: 500,
+      imageQuality: 50,
+      closeIcon: Icon(
+        Icons.close,
+        color: Colors.red,
+        size: 12,
+      ),
+      context: context,
+      source: source,
+      barrierDismissible: true,
+      cameraIcon: Icon(
+        Icons.camera_alt,
+        color: Colors.red,
+      ),
+      //cameraIcon and galleryIcon can change. If no icon provided default icon will be present
+      cameraText: Text(
+        "From Camera",
+        style: TextStyle(color: Colors.red),
+      ),
+      galleryText: Text(
+        "From Gallery",
+        style: TextStyle(color: Colors.blue),
+      ));
+  _cropImage(image!.path,callback);
+}
+
+_cropImage(filePath,Function( File croppedImage,String imageAddress) callback) async {
+  File? croppedImage = await ImageCropper.cropImage(
+      sourcePath: filePath,
+      maxWidth: 1080,
+      maxHeight: 1080,
+      aspectRatio: CropAspectRatio(ratioX: 1.0, ratioY: 1.1));
+  if (croppedImage != null) {
+    callback(croppedImage,basename(croppedImage.path));
+  }
 }

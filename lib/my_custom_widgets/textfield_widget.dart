@@ -74,8 +74,10 @@ class _FieldState extends State<Field> {
   }
 }
 
-Widget textFieldN(String label,bool filled){
+Widget textFieldN(String label,bool filled, {controller}){
   return TextFormField(
+
+    controller: controller,
       decoration: InputDecoration(
         alignLabelWithHint: false,
         labelText: label,
